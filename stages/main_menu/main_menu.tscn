@@ -1,0 +1,115 @@
+[gd_scene load_steps=13 format=3 uid="uid://dsu3sit1o8qsd"]
+
+[ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="1_t2ybe"]
+[ext_resource type="AudioStream" uid="uid://ckvsfjusfv75o" path="res://engine/scenes/main_menu/music/main_menu.xm" id="2_r0pvw"]
+[ext_resource type="PackedScene" uid="uid://dkquk2byjeol8" path="res://engine/scenes/main_menu/main_menu_controls.tscn" id="3_66gju"]
+[ext_resource type="Texture2D" uid="uid://usm6n80msr7n" path="res://engine/scenes/map/textures/bg.png" id="3_b1pty"]
+[ext_resource type="Script" path="res://engine/components/ui/generic/menu_selector.gd" id="4_frmaf"]
+[ext_resource type="Texture2D" uid="uid://cqkxqae2llw5e" path="res://stages/main_menu/textures/main_menu_bg.png" id="4_g2pwh"]
+[ext_resource type="Texture2D" uid="uid://c8wevmet4yyyk" path="res://stages/main_menu/textures/menu_items_bg.png" id="5_0ni4x"]
+[ext_resource type="SpriteFrames" uid="uid://br3qktscdu8fx" path="res://engine/objects/players/prefabs/animations/mario/selector.tres" id="5_x08ib"]
+[ext_resource type="Script" path="res://engine/components/ui/generic/selector_player_animation.gd" id="6_521mh"]
+[ext_resource type="PackedScene" uid="uid://1jfyfq3ty6g1" path="res://engine/scenes/main_menu/settings.tscn" id="7_r3wt2"]
+[ext_resource type="PackedScene" uid="uid://cpme7ixwwuc2p" path="res://engine/scenes/main_menu/controls.tscn" id="8_iq8be"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v54by"]
+atlas = ExtResource("3_b1pty")
+region = Rect2(0, 0, 1920, 480)
+
+[node name="MainMenuExample" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+position_smoothing_speed = 20.0
+
+[node name="Menu" type="Control" parent="."]
+physics_interpolation_mode = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="MusicLoader" parent="Menu" instance=ExtResource("1_t2ybe")]
+music = Array[Resource]([ExtResource("2_r0pvw")])
+channel_id = 0
+
+[node name="Sprite2D" type="TextureRect" parent="Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_v54by")
+
+[node name="MainMenuBg" type="TextureRect" parent="Menu/Sprite2D"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_g2pwh")
+stretch_mode = 3
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Menu"]
+modulate = Color(1, 1, 1, 0.705882)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -176.0
+offset_right = 88.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("5_0ni4x")
+patch_margin_left = 33
+patch_margin_top = 33
+patch_margin_right = 33
+patch_margin_bottom = 33
+
+[node name="MainMenuControls" parent="Menu" instance=ExtResource("3_66gju")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -144.0
+offset_right = 64.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Selector" type="Node2D" parent="Menu"]
+script = ExtResource("4_frmaf")
+smooth_speed = 0.4
+position_padding = 20
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Menu/Selector"]
+sprite_frames = ExtResource("5_x08ib")
+script = ExtResource("6_521mh")
+
+[node name="Settings" parent="." instance=ExtResource("7_r3wt2")]
+layout_mode = 1
+main_menu_controls = "Menu/MainMenuControls"
+
+[node name="Controls" parent="." instance=ExtResource("8_iq8be")]
+layout_mode = 1
+
+[connection signal="selected" from="Menu/MainMenuControls" to="Menu/Selector" method="handle_selection"]
