@@ -1,11 +1,11 @@
 [gd_scene load_steps=15 format=4 uid="uid://w0xp68p3kqoa"]
 
-[ext_resource type="Script" path="res://engine/scripts/classes/level/level.gd" id="1_aoarn"]
+[ext_resource type="Script" uid="uid://dh7ob1sbo8lx7" path="res://engine/scripts/classes/level/level.gd" id="1_aoarn"]
 [ext_resource type="AudioStream" uid="uid://bqiy8kvcsy0rk" path="res://engine/scripts/classes/level/complete.ogg" id="2_ykvcy"]
 [ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="3_1duyc"]
 [ext_resource type="AudioStream" uid="uid://mqegl4h6uttp" path="res://stages/world_1/music/kyze - logic world.xm" id="4_01f5l"]
 [ext_resource type="PackedScene" uid="uid://1do11cr84k7y" path="res://engine/objects/players/player.tscn" id="5_smnd8"]
-[ext_resource type="Script" path="res://engine/objects/players/player_camera_2d.gd" id="7_w5a8o"]
+[ext_resource type="Script" uid="uid://cugmax5psc2oo" path="res://engine/objects/players/player_camera_2d.gd" id="7_w5a8o"]
 [ext_resource type="PackedScene" uid="uid://yqftjpfskche" path="res://engine/components/cam_area/cam_area.tscn" id="8_33wpv"]
 [ext_resource type="FontFile" uid="uid://b1pi0t5byork2" path="res://engine/components/hud/hud_font.fnt" id="9_5ai5j"]
 [ext_resource type="Texture2D" uid="uid://djwe62jh83kf" path="res://engine/tilesets/overworld/hard_block.png" id="10_vj0s4"]

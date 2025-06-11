@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvsf4hcgm2vav"]
 
 [ext_resource type="Texture2D" uid="uid://cixteknhv1ino" path="res://stages/intro/textures/disclaimer.png" id="1_72tey"]
-[ext_resource type="Script" path="res://stages/intro/scripts/intro.gd" id="1_sljtl"]
+[ext_resource type="Script" uid="uid://cut0su45io4y6" path="res://stages/intro/scripts/intro.gd" id="1_sljtl"]
 
 [node name="Intro" type="Control"]
 layout_mode = 3

@@ -1,14 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://dsu3sit1o8qsd"]
+[gd_scene load_steps=15 format=3 uid="uid://dsu3sit1o8qsd"]
 
 [ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="1_t2ybe"]
+[ext_resource type="Script" uid="uid://cffbuf10b1ltt" path="res://stages/main_menu/scripts/main_menu.gd" id="1_wb5qn"]
 [ext_resource type="AudioStream" uid="uid://ckvsfjusfv75o" path="res://engine/scenes/main_menu/music/main_menu.xm" id="2_r0pvw"]
 [ext_resource type="Texture2D" uid="uid://usm6n80msr7n" path="res://engine/scenes/map/textures/bg.png" id="3_b1pty"]
-[ext_resource type="Script" path="res://engine/components/ui/generic/menu_selector.gd" id="4_frmaf"]
+[ext_resource type="Script" uid="uid://cl31gyhukew6s" path="res://engine/components/ui/generic/menu_selector.gd" id="4_frmaf"]
 [ext_resource type="Texture2D" uid="uid://cqkxqae2llw5e" path="res://stages/main_menu/textures/main_menu_bg.png" id="4_g2pwh"]
 [ext_resource type="Texture2D" uid="uid://c8wevmet4yyyk" path="res://stages/main_menu/textures/menu_items_bg.png" id="5_0ni4x"]
 [ext_resource type="SpriteFrames" uid="uid://br3qktscdu8fx" path="res://engine/objects/players/prefabs/animations/mario/selector.tres" id="5_x08ib"]
 [ext_resource type="PackedScene" uid="uid://bj1k76pyo26l" path="res://stages/main_menu/objects/main_menu_controls.tscn" id="6_6iew1"]
-[ext_resource type="Script" path="res://engine/components/ui/generic/selector_player_animation.gd" id="6_521mh"]
+[ext_resource type="Script" uid="uid://b1fji5ve3eoe0" path="res://engine/components/ui/generic/selector_player_animation.gd" id="6_521mh"]
 [ext_resource type="PackedScene" uid="uid://1jfyfq3ty6g1" path="res://engine/scenes/main_menu/settings.tscn" id="7_r3wt2"]
 [ext_resource type="PackedScene" uid="uid://cpme7ixwwuc2p" path="res://engine/scenes/main_menu/controls.tscn" id="8_iq8be"]
 [ext_resource type="PackedScene" uid="uid://c2mch7wqmlcgp" path="res://stages/main_menu/objects/tweaks.tscn" id="12_4lap8"]
@@ -24,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wb5qn")
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
