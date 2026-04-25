@@ -1,9 +1,15 @@
+@tool
 extends MenuSelection
 
 @export var tweak_name: String
 @export var default_value: bool
-#@export var lock_behind_story_mode: bool = false
-@export_multiline var tweak_description: String
+@export_multiline var tweak_title_text: String:
+	set(to):
+		if !to: return
+		tweak_title_text = to
+		if !has_node("Label"): return
+		$Label.text = tweak_title_text
+@export_multiline var tweak_description_text: String
 
 var toggle_off = preload("res://stages/main_menu/sounds/tweak_off.mp3")
 @onready var toggle: TextureRect = $Toggle
@@ -11,22 +17,15 @@ var toggle_off = preload("res://stages/main_menu/sounds/tweak_off.mp3")
 var is_blocked: bool
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	var tweak = SettingsManager.get_tweak(tweak_name, default_value)
 	toggle.texture.region.position.y = 0 if tweak else 16
-	
-	#if lock_behind_story_mode:
-		#var lab: Label = $Label as Label
-		#lab.add_theme_color_override("font_color", Color.LIGHT_CORAL)
-		#if !SecretsManager.is_endgame():
-			#lab.text = "??????? (beat story mode to unlock!)"
-			#is_blocked = true
-			#tweak_description = "this tweak will be available after you complete the story mode!"
-
 
 func _handle_focused(focus) -> void:
 	super(focus)
 	if !focus: return
-	if tweak_description:
+	if tweak_description_text:
 		$"../..".emit_signal(&"_tweak_desc", get_parent())
 
 
@@ -42,6 +41,7 @@ func _handle_select(mouse_input: bool = false) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint(): return
 	super(delta)
 	if !focused || !get_parent().focused: return
 	
@@ -54,8 +54,8 @@ func _physics_process(delta: float) -> void:
 		if _set:
 			Audio.play_1d_sound(selected_sound, true, { "ignore_pause": true, "bus": "1D Sound" })
 	elif Input.is_action_just_pressed(&"ui_select"):
-		if tweak_description:
-			$"../..".emit_signal(&"_show_desc", tweak_description, $Label.text)
+		if tweak_description_text:
+			$"../..".emit_signal(&"_show_desc", tweak_description_text, $Label.text)
 
 
 func _handle_toggle(to_set: bool) -> bool:
@@ -67,3 +67,7 @@ func _handle_toggle(to_set: bool) -> bool:
 		toggle.texture.region.position.y = 0 if to_set else 16
 		return true
 	return false
+
+func _handle_right_click() -> void:
+	if focused && tweak_description_text:
+		$"../..".emit_signal(&"_show_desc", tweak_description_text, $Label.text)

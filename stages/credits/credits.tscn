@@ -30,6 +30,7 @@ texture = ExtResource("4_hltjo")
 centered = false
 
 [node name="Text" type="Control" parent="."]
+physics_interpolation_mode = 1
 anchors_preset = 0
 offset_top = 480.0
 offset_right = 640.0
@@ -38,6 +39,7 @@ script = ExtResource("5_bnb2e")
 speed = 50.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Text"]
+physics_interpolation_mode = 1
 clip_contents = false
 layout_mode = 0
 offset_right = 640.0

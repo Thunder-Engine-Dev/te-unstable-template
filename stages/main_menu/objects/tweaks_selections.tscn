@@ -1,20 +1,24 @@
-[gd_scene load_steps=35 format=3 uid="uid://kiw6yxeov3fj"]
+[gd_scene load_steps=23 format=3 uid="uid://kiw6yxeov3fj"]
 
 [ext_resource type="Script" uid="uid://cn67joohcklbn" path="res://engine/components/ui/generic/menu_items_controller.gd" id="1_e1b0h"]
 [ext_resource type="Script" uid="uid://tt1f58jc38ld" path="res://stages/main_menu/scripts/tweak_category_sel.gd" id="2_2sf4t"]
-[ext_resource type="FontFile" uid="uid://bgsavu6joui2r" path="res://engine/fonts/junebug.ttf" id="2_5xeuf"]
 [ext_resource type="Script" uid="uid://rhnp6nhlfpxo" path="res://stages/main_menu/scripts/tweak_skin_editor_enter.gd" id="2_pysyt"]
 [ext_resource type="AudioStream" uid="uid://d3bnsvly1e68j" path="res://stages/main_menu/sounds/tweak_on.mp3" id="3_ltw82"]
-[ext_resource type="Script" uid="uid://tusrbo2rp6ni" path="res://stages/main_menu/scripts/tweak_boolean.gd" id="3_pxu1a"]
+[ext_resource type="FontVariation" uid="uid://cvpi00hlh84rv" path="res://engine/fonts/font_variations/tweaks_font_title.tres" id="4_u65r8"]
 [ext_resource type="Script" uid="uid://b3jhw08i8hvn2" path="res://stages/main_menu/scripts/tweak_exit.gd" id="5_cvfb0"]
 [ext_resource type="Script" uid="uid://beysu21c0vky3" path="res://stages/main_menu/scripts/minix_selectors_anim.gd" id="5_dhfy0"]
 [ext_resource type="Texture2D" uid="uid://byetryv2ltxkl" path="res://stages/main_menu/textures/check-mark-check.png" id="5_fjyvq"]
-[ext_resource type="Script" uid="uid://b2fxpfbja6b7u" path="res://stages/main_menu/scripts/tweak_skin_selector.gd" id="6_n68nh"]
+[ext_resource type="Script" uid="uid://b2fxpfbja6b7u" path="res://stages/main_menu/scripts/tweak_skin_selector.gd" id="6_skinpk"]
+[ext_resource type="FontVariation" uid="uid://c5ust2bgtp407" path="res://engine/fonts/font_variations/tweaks_font_var.tres" id="10_5c803"]
+[ext_resource type="Script" uid="uid://loalfcd04s87" path="res://stages/main_menu/scripts/tweak_quality.gd" id="12_4kuwt"]
 [ext_resource type="Script" uid="uid://cfbbqpbg8evf4" path="res://stages/main_menu/scripts/tweak_cursor_custom.gd" id="12_w1vvf"]
 [ext_resource type="Script" uid="uid://cl31gyhukew6s" path="res://engine/components/ui/generic/menu_selector.gd" id="15_lbl8e"]
+[ext_resource type="PackedScene" uid="uid://cvr48m6x7dx4d" path="res://stages/main_menu/objects/tweak_boolean.tscn" id="15_mxo6u"]
 [ext_resource type="SpriteFrames" uid="uid://br3qktscdu8fx" path="res://engine/objects/players/prefabs/animations/mario/selector.tres" id="16_4e6sj"]
 [ext_resource type="Script" uid="uid://b1fji5ve3eoe0" path="res://engine/components/ui/generic/selector_player_animation.gd" id="17_xjt7h"]
 [ext_resource type="Script" uid="uid://dr7dh7gdcrv3h" path="res://stages/main_menu/scripts/camera_tweaks_menu.gd" id="18_kemdi"]
+[ext_resource type="Script" uid="uid://bh6vwtr642ta5" path="res://stages/main_menu/objects/character_editor/skin_open_dir.gd" id="skin_opn"]
+[ext_resource type="PackedScene" uid="uid://c0xaj1ukf1axe" path="res://stages/main_menu/objects/character_editor/skin_pack_selection.tscn" id="skin_psc"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_4hroi"]
 color = Color(0, 0, 0.329412, 1)
@@ -28,92 +32,13 @@ region = Rect2(0, 0, 16, 16)
 atlas = ExtResource("5_fjyvq")
 region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kc7pf"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cy860"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2v7r1"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nfdnl"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b6f24"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jklo4"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yh062"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kmm66"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fgqfo"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y0a7p"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tt5wk"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_84j8u"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qkbaa"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eqk6g"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_td6w7"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s7o5r"]
-resource_local_to_scene = true
-atlas = ExtResource("5_fjyvq")
-region = Rect2(0, 0, 16, 16)
-
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 mouse_filter = 2
 
 [node name="Tweaks" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 432)
 layout_mode = 0
 offset_left = 168.0
 offset_top = 24.0
@@ -145,9 +70,9 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "gameplay"
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
+text = "gameplay..."
 uppercase = true
 
 [node name="Value" type="Label" parent="Tweaks/GameplayButton"]
@@ -159,9 +84,9 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 13
-text = "press enter"
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "press %s"
 uppercase = true
 
 [node name="AestheticsButton" type="HBoxContainer" parent="Tweaks"]
@@ -170,6 +95,7 @@ script = ExtResource("2_2sf4t")
 move_to_path = NodePath("../../Aesthetic")
 menu_selector_path = NodePath("../../Selector3")
 reset_to = 1
+show_desc_bool = true
 
 [node name="Label" type="Label" parent="Tweaks/AestheticsButton"]
 layout_mode = 2
@@ -180,9 +106,9 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "aesthetic"
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
+text = "aesthetic..."
 uppercase = true
 
 [node name="Value" type="Label" parent="Tweaks/AestheticsButton"]
@@ -194,9 +120,9 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 13
-text = "press enter"
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "press %s"
 uppercase = true
 
 [node name="MiscaleneousButton" type="HBoxContainer" parent="Tweaks"]
@@ -216,9 +142,9 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "miscellaneous"
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
+text = "miscellaneous..."
 uppercase = true
 
 [node name="Value" type="Label" parent="Tweaks/MiscaleneousButton"]
@@ -230,9 +156,167 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "press %s"
+uppercase = true
+
+[node name="HSeparator8" type="HSeparator" parent="Tweaks"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
+
+[node name="Label" type="Label" parent="Tweaks/HSeparator8"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 456.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(1, 1, 0.792157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "SKINS"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator9" type="HSeparator" parent="Tweaks"]
+layout_mode = 2
+theme_override_constants/separation = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
+
+[node name="SkinPackSelect" type="HBoxContainer" parent="Tweaks"]
+layout_mode = 2
+script = ExtResource("6_skinpk")
+move_to_path = NodePath("../../SkinSelector")
+menu_selector_path = NodePath("../../Selector6")
+reset_to = 3
+tweak_description_text = "set a modern skin for mario or luigi, or make your own character! you can also download custom skins of other players or share yours in our discord server! a guide on how to make your own skins is located there too.
+
+this list is expanded automatically when skins are detected in a skins folder, and applied on exit from this menu."
+
+[node name="Label" type="Label" parent="Tweaks/SkinPackSelect"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.792157, 0.792157, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
+text = "skin pack..."
+uppercase = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tweaks/SkinPackSelect"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 8
+
+[node name="Value" type="Label" parent="Tweaks/SkinPackSelect/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.79, 1, 0.909, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_5c803")
 theme_override_font_sizes/font_size = 13
-text = "press enter"
+text = "mario"
+uppercase = true
+
+[node name="arrow" type="Label" parent="Tweaks/SkinPackSelect/HBoxContainer/Value"]
+layout_mode = 0
+offset_left = -32.0
+offset_right = -7.0
+offset_bottom = 16.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 13
+text = "<--"
+uppercase = true
+script = ExtResource("5_dhfy0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tweaks/SkinPackSelect/HBoxContainer"]
+layout_mode = 2
+
+[node name="arrow" type="Label" parent="Tweaks/SkinPackSelect/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 13
+text = "-->"
+uppercase = true
+script = ExtResource("5_dhfy0")
+left_side = false
+
+[node name="Value" type="Label" parent="Tweaks/SkinPackSelect"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "press %s"
+uppercase = true
+
+[node name="QuickSkinSettingsButton" type="HBoxContainer" parent="Tweaks"]
+layout_mode = 2
+script = ExtResource("2_2sf4t")
+move_to_path = NodePath("../../QuickSkinSettings")
+menu_selector_path = NodePath("../../Selector5")
+reset_to = 4
+
+[node name="Label" type="Label" parent="Tweaks/QuickSkinSettingsButton"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.792157, 0.792157, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
+text = "skin setup..."
+uppercase = true
+
+[node name="Value" type="Label" parent="Tweaks/QuickSkinSettingsButton"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "press %s"
 uppercase = true
 
 [node name="HSeparator5" type="HSeparator" parent="Tweaks"]
@@ -252,8 +336,8 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
 text = "general"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -276,8 +360,8 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
 text = "character"
 uppercase = true
 
@@ -289,14 +373,15 @@ theme_override_constants/separation = 8
 [node name="Value" type="Label" parent="Tweaks/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
+theme_override_colors/font_color = Color(0.79, 1, 0.909, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
 theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
 theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 13
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
 text = "mario"
 uppercase = true
 
@@ -311,8 +396,8 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 13
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
 text = "<--"
 uppercase = true
 script = ExtResource("5_dhfy0")
@@ -328,126 +413,19 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 13
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
 text = "-->"
 uppercase = true
 script = ExtResource("5_dhfy0")
 left_side = false
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Tweaks"]
+[node name="RowMouseInMenus" parent="Tweaks" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-script = ExtResource("6_n68nh")
-tweak_description = "set a modern skin for mario or luigi, or make your own character! you can also download custom skins of other players or share yours in our discord server! a guide on how to make your own skins is located there too.
-
-this list is expanded automatically if skins are detected in a skins folder, and applied on exit from this menu."
-
-[node name="Label" type="Label" parent="Tweaks/HBoxContainer2"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "skin set"
-uppercase = true
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Tweaks/HBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_constants/separation = 8
-
-[node name="Value" type="Label" parent="Tweaks/HBoxContainer2/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 13
-text = "mario"
-uppercase = true
-
-[node name="arrow" type="Label" parent="Tweaks/HBoxContainer2/HBoxContainer/Value"]
-layout_mode = 0
-offset_left = -32.0
-offset_right = -7.0
-offset_bottom = 16.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 13
-text = "<--"
-uppercase = true
-script = ExtResource("5_dhfy0")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Tweaks/HBoxContainer2/HBoxContainer"]
-layout_mode = 2
-
-[node name="arrow" type="Label" parent="Tweaks/HBoxContainer2/HBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 13
-text = "-->"
-uppercase = true
-script = ExtResource("5_dhfy0")
-left_side = false
-
-[node name="HBoxContainer25" type="HBoxContainer" parent="Tweaks"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "mouse_in_menus"
 default_value = true
-tweak_description = "you will be able to select and interact with menu controls such as this one using your mouse cursor."
-selected_sound = ExtResource("3_ltw82")
-
-[node name="Label" type="Label" parent="Tweaks/HBoxContainer25"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "mouse input in menus"
-uppercase = true
-
-[node name="Toggle" type="TextureRect" parent="Tweaks/HBoxContainer25"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_ugvyo")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Tweaks/HBoxContainer25/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
+tweak_title_text = "mouse input in menus"
+tweak_description_text = "you will be able to select and interact with menu controls such as this one using your mouse cursor."
 
 [node name="Exit2" type="HBoxContainer" parent="Tweaks"]
 layout_mode = 2
@@ -463,8 +441,8 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
 text = "save and go back"
 uppercase = true
 
@@ -496,8 +474,8 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
 text = "gameplay"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -508,253 +486,89 @@ layout_mode = 2
 theme_override_constants/separation = 3
 theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
 
-[node name="HBoxContainer24" type="HBoxContainer" parent="Gameplay"]
+[node name="RowProgress" parent="Gameplay" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "progress_continue"
 default_value = true
-tweak_description = "each time you complete a level, a one-time save is made with your entire progress, including your power state, lives, and the level you were on. You can access it at any time.
-
-"
-selected_sound = ExtResource("3_ltw82")
-
-[node name="Label" type="Label" parent="Gameplay/HBoxContainer24"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "save suspended game on exit
+tweak_title_text = "save suspended game on exit
 (aka progress continue)"
-uppercase = true
+tweak_description_text = "each time you complete a level, a one-time save is made with your entire progress, including your power state, lives, and the level you were on. You can access it at any time."
 
-[node name="Toggle" type="TextureRect" parent="Gameplay/HBoxContainer24"]
+[node name="RowBowser" parent="Gameplay" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_kc7pf")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Gameplay/HBoxContainer24/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Gameplay"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "bowser_stomping"
-tweak_description = "mimics the behavior from the original, where the player receives a push forwards each time bowser is stomped, and cannot bounce as high.
+tweak_title_text = "less bouncy bowser stomping"
+tweak_description_text = "Mimics the behavior from the original game, where you receive a push forwards each time Bowser is stomped, and you cannot bounce as high.
 
-disabling this tweak makes stomping on bowser identical to other enemies."
-selected_sound = ExtResource("3_ltw82")
+Disabling this tweak makes stomping on Bowser identical to other enemies."
 
-[node name="Label" type="Label" parent="Gameplay/HBoxContainer4"]
+[node name="RowCrouch" parent="Gameplay" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "less bouncy bowser stomping 
-(as in the original)"
-uppercase = true
+tweak_name = "crouch_jumping"
+default_value = true
+tweak_title_text = "crouch jumping"
+tweak_description_text = "This tweak allows you to jump while crouching with Super or better form.
 
-[node name="Toggle" type="TextureRect" parent="Gameplay/HBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_cy860")
-stretch_mode = 2
+If you jump while crouching, you won't be able to accelerate beyond the walking speed limit, but you will maintain your previous speed. In this state, there is no passive deceleration when no buttons are pressed.
 
-[node name="TextureRect2" type="TextureRect" parent="Gameplay/HBoxContainer4/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
+If disabled, bricks above your head will break automatically while crouching. If enabled, you will need to jump to break bricks or activate bonus blocks."
 
-[node name="HBoxContainer10" type="HBoxContainer" parent="Gameplay"]
+[node name="RowCoyote" parent="Gameplay" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-script = ExtResource("3_pxu1a")
+tweak_name = "coyote_time"
+default_value = true
+tweak_title_text = "coyote time (recommended)"
+tweak_description_text = "running off of a ledge will grant a very brief period of additional time to make a jump."
+
+[node name="RowSuperJumpBug" parent="Gameplay" instance=ExtResource("15_mxo6u")]
+layout_mode = 2
+tweak_name = "super_jump_bug"
+tweak_title_text = "super jump bug (not recommended)"
+tweak_description_text = "(From the original mario forever)
+if grounded, stomping on enemies will not immediately make you bounce off.
+
+notice: any unintended behavior of the game (crashes, etc.) derived from this bug simulation is not supported, use at your own risk.
+
+this tweak is not available in expert mode."
+
+[node name="RowCheckpoints" parent="Gameplay" instance=ExtResource("15_mxo6u")]
+layout_mode = 2
 tweak_name = "checkpoints"
 default_value = true
-tweak_description = "disabling this tweak removes all checkpoints, making the game more challenging."
-selected_sound = ExtResource("3_ltw82")
+tweak_title_text = "mid-level checkpoints"
+tweak_description_text = "v4.4 added checkpoints to the whole game. Disabling this tweak makes the game more challenging."
 
-[node name="Label" type="Label" parent="Gameplay/HBoxContainer10"]
+[node name="RowStompCombo" parent="Gameplay" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "enable checkpoints"
-uppercase = true
-
-[node name="Toggle" type="TextureRect" parent="Gameplay/HBoxContainer10"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_2v7r1")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Gameplay/HBoxContainer10/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
-
-[node name="HBoxContainer12" type="HBoxContainer" parent="Gameplay"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "stomping_combo"
-tweak_description = "stomping combos were not a thing in the original mario forever. the stomping combo goes like this:
+tweak_title_text = "stomping combos"
+tweak_description_text = "The stomping combos were not a thing in the original Mario Forever. A combo goes like this:
 
-100 > 200 > 400 > 500 > 800 > 1000 > 2000 > 4000 > 5000 > 8000 > 1up > back to 100."
-selected_sound = ExtResource("3_ltw82")
+100 > 200 > 400 > 500 > 800 > 1000 > 2000 > 4000 > 5000 > 8000 > 1up > back to 100.
 
-[node name="Label" type="Label" parent="Gameplay/HBoxContainer12"]
+Notice: this tweak has no effect in Mario Minix and Expert Mode."
+
+[node name="RowSpring" parent="Gameplay" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "enable stomping combos"
-uppercase = true
-
-[node name="Toggle" type="TextureRect" parent="Gameplay/HBoxContainer12"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_nfdnl")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Gameplay/HBoxContainer12/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
-
-[node name="HBoxContainer13" type="HBoxContainer" parent="Gameplay"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
-tweak_name = "life_every_2_mil_score"
-default_value = true
-tweak_description = "this tweak makes score useful now!"
-selected_sound = ExtResource("3_ltw82")
-
-[node name="Label" type="Label" parent="Gameplay/HBoxContainer13"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "give an extra life
-every 1,000,000 score points"
-uppercase = true
-
-[node name="Toggle" type="TextureRect" parent="Gameplay/HBoxContainer13"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_b6f24")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Gameplay/HBoxContainer13/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
-
-[node name="HBoxContainer6" type="HBoxContainer" parent="Gameplay"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "better_springboards"
-tweak_description = "while disabled, springboards require the user to press the jump button up to 1/10 of a second in advance before touching the springboard to bounce higher.
+tweak_title_text = "easier springboards (no timing required)"
+tweak_description_text = "When disabled, springboards require the user to press the jump button up to 1/10 of a second in advance before touching the springboard to bounce higher.
 
-enabling this tweak makes the player always jump at the maximum height as long as you hold the jump button, making springboards a little easier to control."
-selected_sound = ExtResource("3_ltw82")
+Enabling this tweak makes you always jump at the maximum height as long as you hold the jump button, making springboards easier to control."
 
-[node name="Label" type="Label" parent="Gameplay/HBoxContainer6"]
+[node name="RowAutorun" parent="Gameplay" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "easier springboards (no timing required)"
-uppercase = true
+tweak_name = "autorun"
+tweak_title_text = "autorun"
+tweak_description_text = "When enabled, it inverts the behavior of the run button: holding it will make you walk instead, and vice versa."
 
-[node name="Toggle" type="TextureRect" parent="Gameplay/HBoxContainer6"]
+[node name="RowRetroDmg" parent="Gameplay" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_jklo4")
-stretch_mode = 2
+tweak_name = "retro_damage_system"
+tweak_title_text = "\"SMB1 DAMAGE SYSTEM\" challenge mode"
+tweak_description_text = "Like in Super Mario Bros. 1, getting hit while powered up causes the player to shrink to the small form instead of going to the super form first.
 
-[node name="TextureRect2" type="TextureRect" parent="Gameplay/HBoxContainer6/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
+This challenge is completely optional, and there is no reward for it."
 
 [node name="Exit" type="HBoxContainer" parent="Gameplay"]
 layout_mode = 2
@@ -772,8 +586,8 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
 text = "go back"
 uppercase = true
 
@@ -801,12 +615,12 @@ offset_bottom = 18.0
 theme_override_colors/font_color = Color(1, 1, 0.792157, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
 theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
+theme_override_constants/line_spacing = 0
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
 text = "aesthetic"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -817,13 +631,12 @@ layout_mode = 2
 theme_override_constants/separation = 3
 theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
 
-[node name="HBoxContainer27" type="HBoxContainer" parent="Aesthetic"]
+[node name="HBoxContainer9" type="HBoxContainer" parent="Aesthetic"]
 layout_mode = 2
-script = ExtResource("3_pxu1a")
-tweak_name = "replace_circle_transitions_with_fades"
-selected_sound = ExtResource("3_ltw82")
+script = ExtResource("12_4kuwt")
+tweak_description_text = "This provides quick access to the quality setting from the options screen."
 
-[node name="Label" type="Label" parent="Aesthetic/HBoxContainer27"]
+[node name="Label" type="Label" parent="Aesthetic/HBoxContainer9"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
 theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
@@ -831,196 +644,108 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "replace circle transitions with fades
-(from 5.0+)"
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
+text = "quality"
 uppercase = true
 
-[node name="Toggle" type="TextureRect" parent="Aesthetic/HBoxContainer27"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Aesthetic/HBoxContainer9"]
 layout_mode = 2
 size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_yh062")
-stretch_mode = 2
+theme_override_constants/separation = 8
 
-[node name="TextureRect2" type="TextureRect" parent="Aesthetic/HBoxContainer27/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
+[node name="Value" type="Label" parent="Aesthetic/HBoxContainer9/HBoxContainer"]
 layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
 size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
+theme_override_colors/font_color = Color(0.79, 1, 0.909, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "minimum"
+uppercase = true
 
-[node name="HBoxContainer22" type="HBoxContainer" parent="Aesthetic"]
+[node name="arrow" type="Label" parent="Aesthetic/HBoxContainer9/HBoxContainer/Value"]
+layout_mode = 0
+offset_left = -36.0
+offset_right = -8.0
+offset_bottom = 17.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "<--"
+uppercase = true
+script = ExtResource("5_dhfy0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Aesthetic/HBoxContainer9/HBoxContainer"]
 layout_mode = 2
-script = ExtResource("3_pxu1a")
+
+[node name="arrow" type="Label" parent="Aesthetic/HBoxContainer9/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "-->"
+uppercase = true
+script = ExtResource("5_dhfy0")
+left_side = false
+
+[node name="RowCircleFade" parent="Aesthetic" instance=ExtResource("15_mxo6u")]
+layout_mode = 2
+tweak_name = "replace_circle_transitions_with_fades"
+tweak_title_text = "replace circle transitions with crossfades"
+tweak_description_text = "If enabled, crossfades will replace nearly all circle transitions between scenes, pausing the game in the process.
+Such transitions take slightly less time than the default circle ones.
+
+This behavior is similar to versions 5.0+ of the original game."
+
+[node name="RowSmoothCam" parent="Aesthetic" instance=ExtResource("15_mxo6u")]
+layout_mode = 2
 tweak_name = "enable_smooth_cam_transitions"
 default_value = true
-tweak_description = "smoothes out camera movement between certain areas, such as save game room."
-selected_sound = ExtResource("3_ltw82")
+tweak_title_text = "smooth camera transitions between areas"
+tweak_description_text = "smoothes out camera movement between certain areas, such as the save game room."
 
-[node name="Label" type="Label" parent="Aesthetic/HBoxContainer22"]
+[node name="RowBlur" parent="Aesthetic" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "smooth camera transitions between areas"
-uppercase = true
-
-[node name="Toggle" type="TextureRect" parent="Aesthetic/HBoxContainer22"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_kmm66")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Aesthetic/HBoxContainer22/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
-
-[node name="HBoxContainer23" type="HBoxContainer" parent="Aesthetic"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "enable_blur_transitions"
 default_value = true
-tweak_description = "adds a blur transition each time the player warps into a new area. disable this to make the new area load immediately."
-selected_sound = ExtResource("3_ltw82")
+tweak_title_text = "blur transitions between pipe warp areas"
+tweak_description_text = "adds a blur transition each time the player warps into a new area mid-level. disable this tweak to make the new area load immediately."
 
-[node name="Label" type="Label" parent="Aesthetic/HBoxContainer23"]
+[node name="RowPauseSuit" parent="Aesthetic" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "blur transitions between pipe warp areas"
-uppercase = true
-
-[node name="Toggle" type="TextureRect" parent="Aesthetic/HBoxContainer23"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_fgqfo")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Aesthetic/HBoxContainer23/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
-
-[node name="HBoxContainer16" type="HBoxContainer" parent="Aesthetic"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "pause_on_suit_change"
-tweak_description = "each time the player receives a damage or dies, the world around them halts for a second, giving more time for the user to react."
-selected_sound = ExtResource("3_ltw82")
+tweak_title_text = "pause on player suit change"
+tweak_description_text = "each time the player receives a powerup or takes damage, the entire game pauses for a second, giving the user more time to react."
 
-[node name="Label" type="Label" parent="Aesthetic/HBoxContainer16"]
+[node name="RowSkid" parent="Aesthetic" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "pause on player suit change"
-uppercase = true
-
-[node name="Toggle" type="TextureRect" parent="Aesthetic/HBoxContainer16"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_y0a7p")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Aesthetic/HBoxContainer16/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
-
-[node name="HBoxContainer17" type="HBoxContainer" parent="Aesthetic"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "player_skid_animation"
-tweak_description = "enables the skidding animation and particles, similar to something you would see in other mario games.
+tweak_title_text = "player skidding effects"
+tweak_description_text = "enables the skidding animation and particles, similar to something you would see in other mario games.
 
-note: this does not affect gameplay in any way!"
-selected_sound = ExtResource("3_ltw82")
-
-[node name="Label" type="Label" parent="Aesthetic/HBoxContainer17"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "enable player skidding effects"
-uppercase = true
-
-[node name="Toggle" type="TextureRect" parent="Aesthetic/HBoxContainer17"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_tt5wk")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Aesthetic/HBoxContainer17/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
+note: this tweak does not affect gameplay in any way!"
 
 [node name="HBoxContainer26" type="HBoxContainer" parent="Aesthetic"]
 layout_mode = 2
 script = ExtResource("12_w1vvf")
 tweak_name = "custom_mouse_cursor"
-tweak_description = "sets a custom mouse cursor image."
+tweak_description_text = "This tweak replaces the system mouse cursor visuals with a custom image from the Mario Worker 1.0 source files."
 selected_sound = ExtResource("3_ltw82")
 
 [node name="Label" type="Label" parent="Aesthetic/HBoxContainer26"]
@@ -1031,8 +756,8 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
 text = "custom mouse cursor"
 uppercase = true
 
@@ -1040,7 +765,7 @@ uppercase = true
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 4
-texture = SubResource("AtlasTexture_84j8u")
+texture = SubResource("AtlasTexture_ugvyo")
 stretch_mode = 2
 
 [node name="TextureRect2" type="TextureRect" parent="Aesthetic/HBoxContainer26/Toggle"]
@@ -1054,6 +779,21 @@ offset_bottom = 19.0
 size_flags_horizontal = 10
 texture = SubResource("AtlasTexture_lobhh")
 stretch_mode = 2
+
+[node name="RowMouseHoverSnd" parent="Aesthetic" instance=ExtResource("15_mxo6u")]
+layout_mode = 2
+tweak_name = "mouse_select_sound"
+default_value = true
+tweak_title_text = "unique sound when hovering over
+menus with mouse"
+tweak_description_text = "when enabled, selecting menus using the mouse cursor will replace the hover sound with a much less noisy one."
+
+[node name="RowNoAudio" parent="Aesthetic" instance=ExtResource("15_mxo6u")]
+layout_mode = 2
+tweak_name = "no_audio_effects"
+tweak_title_text = "force disable audio effects (reverb)"
+tweak_description_text = "available in medium quality and higher, certain areas can contain audio effects applied to sounds, such as reverb.
+when this tweak is enabled, audio effects are never applied."
 
 [node name="Exit" type="HBoxContainer" parent="Aesthetic"]
 layout_mode = 2
@@ -1071,12 +811,13 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
 text = "go back"
 uppercase = true
 
 [node name="Presets" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 432)
 layout_mode = 2
 offset_left = 1672.0
 offset_top = 24.0
@@ -1104,8 +845,8 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
 text = "miscellaneous"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -1116,165 +857,59 @@ layout_mode = 2
 theme_override_constants/separation = 3
 theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
 
-[node name="HBoxContainer20" type="HBoxContainer" parent="Presets"]
+[node name="RowLoadFirst" parent="Presets" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "load_save_from_world_start"
-tweak_description = "copies the behavior over from the original game, where save pipes ignore the level you were on.
+tweak_title_text = "save pipe: always first level of the world"
+tweak_description_text = "Copies the behavior over from the original game, where save pipes ignore the level you were on.
 
-notice: enabling this tweak will not reset your save pipe until you enter it."
-selected_sound = ExtResource("3_ltw82")
+Notice: enabling this tweak will not reset your save pipe until you enter it.
 
-[node name="Label" type="Label" parent="Presets/HBoxContainer20"]
+Notice 2: enabling this tweak will disable the level selector after beating the game. The world selector is unaffected."
+
+[node name="RowF3" parent="Presets" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "save pipe: always first level of the world"
-uppercase = true
-
-[node name="Toggle" type="TextureRect" parent="Presets/HBoxContainer20"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_qkbaa")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Presets/HBoxContainer20/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
-
-[node name="HBoxContainer16" type="HBoxContainer" parent="Presets"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "f3_keybind"
-tweak_description = "enables a quick shortcut to save game room using f3 key."
-selected_sound = ExtResource("3_ltw82")
+tweak_title_text = "f3 keybind to save game room"
+tweak_description_text = "enables a quick shortcut to save room using the f3 key.
 
-[node name="Label" type="Label" parent="Presets/HBoxContainer16"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "f3 keybind to save game room"
-uppercase = true
+notice: if you are in options and have not selected \"exit\" (or the escape key) to go back, pressing f3 will not save the options you've changed! it will also not reset the scene if you're already in the save room."
 
-[node name="Toggle" type="TextureRect" parent="Presets/HBoxContainer16"]
+[node name="RowF4" parent="Presets" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_eqk6g")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Presets/HBoxContainer16/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
-
-[node name="HBoxContainer17" type="HBoxContainer" parent="Presets"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "f4_keybind"
-tweak_description = "enables a quick shortcut to main menu using f4 key."
-selected_sound = ExtResource("3_ltw82")
+tweak_title_text = "f4 keybind to main menu"
+tweak_description_text = "enables a quick shortcut to main menu using the f4 key.
 
-[node name="Label" type="Label" parent="Presets/HBoxContainer17"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "f4 keybind to main menu"
-uppercase = true
+notice: you cannot reset the scene if you are already in the main menu."
 
-[node name="Toggle" type="TextureRect" parent="Presets/HBoxContainer17"]
+[node name="RowRevShop" parent="Presets" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_td6w7")
-stretch_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="Presets/HBoxContainer17/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
-layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
-
-[node name="HBoxContainer21" type="HBoxContainer" parent="Presets"]
-layout_mode = 2
-script = ExtResource("3_pxu1a")
 tweak_name = "revamp_item_shop"
-tweak_description = "if disabled, touching a power-up in save room item shop will immediately buy an item.
+tweak_title_text = "require pressing up in item shop"
+tweak_description_text = "if disabled, touching a power-up in the item shop will immediately buy an item in the save room.
 
-if enabled, it also requires the player to press the moving up key in order to buy an item."
-selected_sound = ExtResource("3_ltw82")
+if enabled, it also requires the player to press the moving up key to buy an item."
 
-[node name="Label" type="Label" parent="Presets/HBoxContainer21"]
+[node name="RowFasterDel" parent="Presets" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
-theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/shadow_offset_x = 3
-theme_override_constants/shadow_offset_y = 3
-theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
-text = "require pressing up in item shop"
-uppercase = true
+tweak_name = "faster_save_deletion"
+tweak_title_text = "save pipe: faster save deletion"
+tweak_description_text = "if disabled, deleting saves in the save game room takes 3 seconds (or 2.5s in 1.2x game speed).
 
-[node name="Toggle" type="TextureRect" parent="Presets/HBoxContainer21"]
-layout_mode = 2
-size_flags_horizontal = 10
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_s7o5r")
-stretch_mode = 2
+if enabled, the time is reduced to 0.6 seconds (0.5s in 1.2x game speed)."
 
-[node name="TextureRect2" type="TextureRect" parent="Presets/HBoxContainer21/Toggle"]
-modulate = Color(0, 0, 0, 0.462745)
-z_index = -1
+[node name="RowConsole" parent="Presets" instance=ExtResource("15_mxo6u")]
 layout_mode = 2
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 19.0
-offset_bottom = 19.0
-size_flags_horizontal = 10
-texture = SubResource("AtlasTexture_lobhh")
-stretch_mode = 2
+tweak_name = "console_enabled"
+tweak_title_text = "enable cheat commands (f1 key)"
+tweak_description_text = "gives an ability to toggle debug console with the f1 key on keyboard.
+
+please note: console commands are not supported and may result in crash in certain conditions.
+
+warning: enabling this tweak will disable achievement progression and profile saving!
+to restore achievements if still disabled, please, restart the game.
+to enable saving with the console, use \"cv_forcesave\" and \"cv_forcesave_suspended\" commands. note that using these commands will mark your saves as \"cheated\" until you reset them."
 
 [node name="Exit" type="HBoxContainer" parent="Presets"]
 layout_mode = 2
@@ -1292,8 +927,205 @@ theme_override_constants/line_spacing = 1
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 4
-theme_override_fonts/font = ExtResource("2_5xeuf")
-theme_override_font_sizes/font_size = 12
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
+text = "go back"
+uppercase = true
+
+[node name="QuickSkinSettings" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 432)
+layout_mode = 2
+offset_left = 2168.0
+offset_top = 24.0
+offset_right = 2624.0
+offset_bottom = 456.0
+theme_override_constants/separation = 14
+script = ExtResource("1_e1b0h")
+focused = false
+prev_screen_node_path = NodePath("Exit")
+
+[node name="HSeparator2" type="HSeparator" parent="QuickSkinSettings"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
+
+[node name="Label" type="Label" parent="QuickSkinSettings/HSeparator2"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 456.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(1, 1, 0.792157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "skin setup"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator3" type="HSeparator" parent="QuickSkinSettings"]
+layout_mode = 2
+theme_override_constants/separation = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
+
+[node name="HBoxOpenDir" type="HBoxContainer" parent="QuickSkinSettings"]
+layout_mode = 2
+script = ExtResource("skin_opn")
+tweak_description_text = "opens up a folder on your file system where this skin is located."
+
+[node name="Label" type="Label" parent="QuickSkinSettings/HBoxOpenDir"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
+text = "open directory"
+uppercase = true
+
+[node name="Value" type="Label" parent="QuickSkinSettings/HBoxOpenDir"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "press %s"
+uppercase = true
+
+[node name="HBoxOpenDocs" type="HBoxContainer" parent="QuickSkinSettings"]
+layout_mode = 2
+script = ExtResource("skin_opn")
+is_docs = true
+tweak_description_text = "opens up your browser with a skin guide web page."
+
+[node name="Label" type="Label" parent="QuickSkinSettings/HBoxOpenDocs"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
+text = "open documentation"
+uppercase = true
+
+[node name="Value" type="Label" parent="QuickSkinSettings/HBoxOpenDocs"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "press %s"
+uppercase = true
+
+[node name="Exit" type="HBoxContainer" parent="QuickSkinSettings"]
+layout_mode = 2
+size_flags_vertical = 10
+script = ExtResource("2_2sf4t")
+move_to_path = NodePath("../../Tweaks")
+menu_selector_path = NodePath("../../Selector")
+
+[node name="Label" type="Label" parent="QuickSkinSettings/Exit"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.792157, 0.792157, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
+text = "go back"
+uppercase = true
+
+[node name="SkinSelector" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 432)
+layout_mode = 2
+offset_left = 2664.0
+offset_top = 24.0
+offset_right = 3120.0
+offset_bottom = 456.0
+theme_override_constants/separation = 14
+script = ExtResource("1_e1b0h")
+focused = false
+prev_screen_node_path = NodePath("Exit")
+
+[node name="HSeparator2" type="HSeparator" parent="SkinSelector"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
+
+[node name="Label" type="Label" parent="SkinSelector/HSeparator2"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 456.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(1, 1, 0.792157, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("4_u65r8")
+theme_override_font_sizes/font_size = 22
+text = "Select a skin pack"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="HSeparator3" type="HSeparator" parent="SkinSelector"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
+
+[node name="SkinPackNone" parent="SkinSelector" instance=ExtResource("skin_psc")]
+layout_mode = 2
+
+[node name="HSeparatorSpawnTweaks" type="HSeparator" parent="SkinSelector"]
+layout_mode = 2
+theme_override_constants/separation = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_4hroi")
+
+[node name="Exit" type="HBoxContainer" parent="SkinSelector"]
+layout_mode = 2
+size_flags_vertical = 10
+script = ExtResource("2_2sf4t")
+move_to_path = NodePath("../../Tweaks")
+menu_selector_path = NodePath("../../Selector")
+
+[node name="Label" type="Label" parent="SkinSelector/Exit"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.792157, 0.792157, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
+theme_override_constants/line_spacing = 1
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_5c803")
+theme_override_font_sizes/font_size = 22
 text = "go back"
 uppercase = true
 
@@ -1337,6 +1169,26 @@ position_padding = 20
 sprite_frames = ExtResource("16_4e6sj")
 script = ExtResource("17_xjt7h")
 
+[node name="Selector5" type="Node2D" parent="."]
+physics_interpolation_mode = 1
+script = ExtResource("15_lbl8e")
+smooth_speed = 0.4
+position_padding = 20
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Selector5"]
+sprite_frames = ExtResource("16_4e6sj")
+script = ExtResource("17_xjt7h")
+
+[node name="Selector6" type="Node2D" parent="."]
+physics_interpolation_mode = 1
+script = ExtResource("15_lbl8e")
+smooth_speed = 0.4
+position_padding = 20
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Selector6"]
+sprite_frames = ExtResource("16_4e6sj")
+script = ExtResource("17_xjt7h")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
 process_callback = 0
@@ -1359,3 +1211,8 @@ menu_controller_path = NodePath("../Tweaks")
 [connection signal="selected" from="Aesthetic" to="Camera2D" method="handle_selection"]
 [connection signal="selected" from="Presets" to="Selector4" method="handle_selection"]
 [connection signal="selected" from="Presets" to="Camera2D" method="handle_selection"]
+[connection signal="selected" from="QuickSkinSettings" to="Selector5" method="handle_selection"]
+[connection signal="selected" from="QuickSkinSettings" to="Camera2D" method="handle_selection"]
+[connection signal="selected" from="SkinSelector" to="Selector6" method="handle_selection"]
+[connection signal="selected" from="SkinSelector" to="Camera2D" method="handle_selection"]
+[connection signal="selection_entered" from="SkinSelector/Exit" to="Tweaks/SkinPackSelect" method="_on_exit_selection_entered"]
