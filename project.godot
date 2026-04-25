@@ -34,7 +34,6 @@ thunder_settings/tweaks/bowser_stomping=false
 thunder_settings/tweaks/replace_circle_transitions_with_fades=false
 thunder_settings/tweaks/checkpoints=true
 thunder_settings/tweaks/stomping_combo=false
-thunder_settings/tweaks/life_every_2_mil_score=false
 thunder_settings/tweaks/pause_on_suit_change=false
 thunder_settings/tweaks/player_skid_animation=false
 thunder_settings/default_quality_setting=1
