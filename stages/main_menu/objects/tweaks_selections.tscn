@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://kiw6yxeov3fj"]
+[gd_scene load_steps=24 format=3 uid="uid://kiw6yxeov3fj"]
 
 [ext_resource type="Script" uid="uid://cn67joohcklbn" path="res://engine/components/ui/generic/menu_items_controller.gd" id="1_e1b0h"]
 [ext_resource type="Script" uid="uid://tt1f58jc38ld" path="res://stages/main_menu/scripts/tweak_category_sel.gd" id="2_2sf4t"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://beysu21c0vky3" path="res://stages/main_menu/scripts/minix_selectors_anim.gd" id="5_dhfy0"]
 [ext_resource type="Texture2D" uid="uid://byetryv2ltxkl" path="res://stages/main_menu/textures/check-mark-check.png" id="5_fjyvq"]
 [ext_resource type="Script" uid="uid://b2fxpfbja6b7u" path="res://stages/main_menu/scripts/tweak_skin_selector.gd" id="6_skinpk"]
+[ext_resource type="PackedScene" uid="uid://c588emavhoisj" path="res://stages/main_menu/objects/reset_data.tscn" id="9_rp4k8"]
 [ext_resource type="FontVariation" uid="uid://c5ust2bgtp407" path="res://engine/fonts/font_variations/tweaks_font_var.tres" id="10_5c803"]
 [ext_resource type="Script" uid="uid://loalfcd04s87" path="res://stages/main_menu/scripts/tweak_quality.gd" id="12_4kuwt"]
 [ext_resource type="Script" uid="uid://cfbbqpbg8evf4" path="res://stages/main_menu/scripts/tweak_cursor_custom.gd" id="12_w1vvf"]
@@ -47,7 +48,7 @@ offset_bottom = 456.0
 theme_override_constants/separation = 14
 script = ExtResource("1_e1b0h")
 focused = false
-prev_screen_node_path = NodePath("Exit2")
+prev_screen_node_path = NodePath("Exit")
 
 [node name="HSeparator7" type="HSeparator" parent="Tweaks"]
 layout_mode = 2
@@ -427,12 +428,15 @@ default_value = true
 tweak_title_text = "mouse input in menus"
 tweak_description_text = "you will be able to select and interact with menu controls such as this one using your mouse cursor."
 
-[node name="Exit2" type="HBoxContainer" parent="Tweaks"]
+[node name="RowResetData" parent="Tweaks" instance=ExtResource("9_rp4k8")]
+layout_mode = 2
+
+[node name="Exit" type="HBoxContainer" parent="Tweaks"]
 layout_mode = 2
 size_flags_vertical = 10
 script = ExtResource("5_cvfb0")
 
-[node name="Label" type="Label" parent="Tweaks/Exit2"]
+[node name="Label" type="Label" parent="Tweaks/Exit"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.792157, 0.792157, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
@@ -740,6 +744,13 @@ tweak_title_text = "player skidding effects"
 tweak_description_text = "enables the skidding animation and particles, similar to something you would see in other mario games.
 
 note: this tweak does not affect gameplay in any way!"
+
+[node name="RowSecretsNotif" parent="Aesthetic" instance=ExtResource("15_mxo6u")]
+layout_mode = 2
+tweak_name = "secrets_notification"
+default_value = true
+tweak_title_text = "achievement notifications"
+tweak_description_text = "each time an achievement gets unlocked or progresses further, a pop-up will appear for a few seconds, and, if unlocked, a sound effect will play."
 
 [node name="HBoxContainer26" type="HBoxContainer" parent="Aesthetic"]
 layout_mode = 2

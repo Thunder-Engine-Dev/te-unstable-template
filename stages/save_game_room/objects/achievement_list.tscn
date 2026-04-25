@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpy5uwu8wqcur"]
+
+[ext_resource type="Script" uid="uid://bbplmsebpp6d0" path="res://stages/save_game_room/objects/achievement_list.gd" id="1_6f7qc"]
+[ext_resource type="PackedScene" uid="uid://d3ghumtr8whn6" path="res://stages/save_game_room/objects/achievement_entry.tscn" id="1_7at1v"]
+
+[node name="AchievementList" type="VBoxContainer"]
+script = ExtResource("1_6f7qc")
+
+[node name="AchievementEntry" parent="." instance=ExtResource("1_7at1v")]
+layout_mode = 2
+entry_name = "secret 1"
+secret_id = "secret 1"
+
+[node name="AchievementEntry2" parent="." instance=ExtResource("1_7at1v")]
+layout_mode = 2
+entry_name = "secret 2 (progress)"
+secret_id = "secret 2 progress"

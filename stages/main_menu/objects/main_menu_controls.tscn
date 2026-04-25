@@ -1,14 +1,46 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj1k76pyo26l"]
+[gd_scene load_steps=11 format=3 uid="uid://bj1k76pyo26l"]
 
-[ext_resource type="PackedScene" uid="uid://dkquk2byjeol8" path="res://engine/scenes/main_menu/main_menu_controls.tscn" id="1_wlbuh"]
+[ext_resource type="Script" uid="uid://cn67joohcklbn" path="res://engine/components/ui/generic/menu_items_controller.gd" id="1_nf66h"]
+[ext_resource type="Texture2D" uid="uid://cf48rsepfm4jo" path="res://engine/scenes/main_menu/textures/start_text.png" id="2_iu6ww"]
 [ext_resource type="Texture2D" uid="uid://dclnlnb46ip66" path="res://stages/main_menu/textures/menu_tweaks.png" id="2_qoky7"]
 [ext_resource type="Script" uid="uid://p5lnj1sxg5xh" path="res://stages/main_menu/scripts/tweaks_sel.gd" id="3_c2jjk"]
+[ext_resource type="Script" uid="uid://dcghjeillf84w" path="res://engine/scenes/main_menu/scripts/start_selection.gd" id="3_tmk8m"]
+[ext_resource type="AudioStream" uid="uid://bi0m6xn5201en" path="res://engine/scenes/main_menu/sounds/lets.wav" id="4_1lqaa"]
+[ext_resource type="Texture2D" uid="uid://bloy5vfyv8okk" path="res://engine/scenes/main_menu/textures/options_text.png" id="5_yr7nl"]
+[ext_resource type="Script" uid="uid://c2do7rfg6ssmk" path="res://engine/scenes/main_menu/scripts/option_selection.gd" id="6_m52o5"]
+[ext_resource type="Texture2D" uid="uid://8yrsglnn48ca" path="res://engine/scenes/main_menu/textures/quit_text.png" id="9_n5yei"]
+[ext_resource type="Script" uid="uid://voic2bihchnr" path="res://engine/scenes/main_menu/scripts/quit_selection.gd" id="10_m1i6r"]
 
-[node name="MainMenuControls" instance=ExtResource("1_wlbuh")]
+[node name="MainMenuControls" type="VBoxContainer"]
+offset_right = 104.0
+offset_bottom = 76.0
+script = ExtResource("1_nf66h")
 
-[node name="Tweaks" type="TextureRect" parent="." index="2"]
+[node name="Start" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_iu6ww")
+stretch_mode = 3
+script = ExtResource("3_tmk8m")
+selected_sound = ExtResource("4_1lqaa")
+
+[node name="Options" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("5_yr7nl")
+stretch_mode = 3
+script = ExtResource("6_m52o5")
+
+[node name="Tweaks" type="TextureRect" parent="."]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_qoky7")
 stretch_mode = 3
 script = ExtResource("3_c2jjk")
+
+[node name="Quit" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("9_n5yei")
+stretch_mode = 3
+script = ExtResource("10_m1i6r")

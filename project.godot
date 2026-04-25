@@ -59,6 +59,7 @@ thunder_settings/tweaks/mouse_select_sound=true
 thunder_settings/tweaks/no_audio_effects=false
 thunder_settings/tweaks/retro_damage_system=false
 thunder_settings/tweaks/super_jump_bug=false
+thunder_settings/tweaks/secrets_notification=true
 
 [audio]
 
@@ -80,6 +81,7 @@ SettingsManager="*res://engine/singletones/scripts/SettingsManager.gd"
 SkinsManager="*res://engine/singletones/scripts/SkinsManager.gd"
 Pause="*res://engine/components/pause/pause.tscn"
 GameOverContinue="*res://engine/components/game_over/game_over_continue.tscn"
+SecretsManager="*res://components/secrets_manager/SecretsManager.tscn"
 
 [debug]
 
