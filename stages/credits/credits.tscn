@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnhheqtwtjvb3"]
+[gd_scene format=3 uid="uid://bnhheqtwtjvb3"]
 
 [ext_resource type="Script" uid="uid://cdjnovyxotms7" path="res://engine/scenes/credits/scripts/credits.gd" id="1_5cfrf"]
 [ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="2_lbga6"]
@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://dbcfigd04ap1h" path="res://engine/scenes/credits/credits_text.gd" id="5_bnb2e"]
 [ext_resource type="FontFile" uid="uid://dod5x6pna7fub" path="res://engine/fonts/comix_heavy.ttf" id="6_7x8is"]
 
-[node name="CreditsExample" type="Control"]
+[node name="CreditsExample" type="Control" unique_id=889417137]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,18 +18,18 @@ mouse_filter = 1
 script = ExtResource("1_5cfrf")
 metadata/_edit_lock_ = true
 
-[node name="MusicLoader" parent="." instance=ExtResource("2_lbga6")]
+[node name="MusicLoader" parent="." unique_id=2039768105 instance=ExtResource("2_lbga6")]
 music = Array[Resource]([ExtResource("3_xfjdr")])
 channel_id = -7
 play_immediately = false
 stop_all_music_on_start = false
 play_globally = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=748880279]
 texture = ExtResource("4_hltjo")
 centered = false
 
-[node name="Text" type="Control" parent="."]
+[node name="Text" type="Control" parent="." unique_id=1153521595]
 physics_interpolation_mode = 1
 anchors_preset = 0
 offset_top = 480.0
@@ -38,7 +38,7 @@ offset_bottom = 800.0
 script = ExtResource("5_bnb2e")
 speed = 50.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Text"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Text" unique_id=392255421]
 clip_contents = false
 layout_mode = 0
 offset_right = 640.0

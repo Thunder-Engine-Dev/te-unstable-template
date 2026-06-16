@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c588emavhoisj"]
+[gd_scene format=3 uid="uid://c588emavhoisj"]
 
 [ext_resource type="Script" uid="uid://bwktlrsg21fm" path="res://stages/main_menu/objects/reset_data_sel.gd" id="1_v4s8x"]
 [ext_resource type="FontVariation" uid="uid://c5ust2bgtp407" path="res://engine/fonts/font_variations/tweaks_font_var.tres" id="2_s651j"]
@@ -17,10 +17,10 @@ action = &"ui_cancel"
 [sub_resource type="Shortcut" id="Shortcut_mnbbt"]
 events = [SubResource("InputEventAction_s7p2c")]
 
-[node name="HBoxContainer2" type="HBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" unique_id=777729483]
 script = ExtResource("1_v4s8x")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=134957340]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.792157, 0.792157, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
@@ -34,7 +34,7 @@ theme_override_font_sizes/font_size = 22
 text = "reset data..."
 uppercase = true
 
-[node name="Window" type="Window" parent="."]
+[node name="Window" type="Window" parent="." unique_id=236323278]
 auto_translate_mode = 1
 disable_3d = true
 title = "Reset Data..."
@@ -43,7 +43,7 @@ size = Vector2i(320, 290)
 visible = false
 min_size = Vector2i(300, 290)
 
-[node name="Control" type="PanelContainer" parent="Window"]
+[node name="Control" type="PanelContainer" parent="Window" unique_id=1473601594]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -55,39 +55,39 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_hccet")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Control" unique_id=1279821651]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Window/Control/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Window/Control/VBoxContainer" unique_id=898973890]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 6
 
-[node name="SavePipes" type="Button" parent="Window/Control/VBoxContainer/VBoxContainer"]
+[node name="SavePipes" type="Button" parent="Window/Control/VBoxContainer/VBoxContainer" unique_id=153617724]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Reset all save pipes"
 
-[node name="Achievements" type="Button" parent="Window/Control/VBoxContainer/VBoxContainer"]
+[node name="Achievements" type="Button" parent="Window/Control/VBoxContainer/VBoxContainer" unique_id=353027739]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Reset all achievements"
 
-[node name="Tweaks" type="Button" parent="Window/Control/VBoxContainer/VBoxContainer"]
+[node name="Tweaks" type="Button" parent="Window/Control/VBoxContainer/VBoxContainer" unique_id=550634519]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Reset tweaks to default"
 
-[node name="Settings" type="Button" parent="Window/Control/VBoxContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="Window/Control/VBoxContainer/VBoxContainer" unique_id=795385228]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Reset settings to default"
 
-[node name="HBoxContainer2" type="VBoxContainer" parent="Window/Control/VBoxContainer"]
+[node name="HBoxContainer2" type="VBoxContainer" parent="Window/Control/VBoxContainer" unique_id=820636198]
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="CloseBtn" type="Button" parent="Window/Control/VBoxContainer/HBoxContainer2"]
+[node name="CloseBtn" type="Button" parent="Window/Control/VBoxContainer/HBoxContainer2" unique_id=1173107269]
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -95,7 +95,7 @@ size_flags_vertical = 10
 shortcut = SubResource("Shortcut_mnbbt")
 text = "Close"
 
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="." unique_id=138746649]
 auto_translate_mode = 1
 disable_3d = true
 initial_position = 2
@@ -105,7 +105,7 @@ ok_button_text = "Yes"
 dialog_text = "Really %s?"
 cancel_button_text = "No"
 
-[node name="Value" type="Label" parent="."]
+[node name="Value" type="Label" parent="." unique_id=1508310588]
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)

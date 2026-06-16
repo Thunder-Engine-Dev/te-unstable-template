@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://gxkwsxwairg4"]
+[gd_scene format=3 uid="uid://gxkwsxwairg4"]
 
 [ext_resource type="Script" uid="uid://cgmeyo2w81dhx" path="res://engine/scenes/map/scripts/map-complete.gd" id="1_r45ud"]
 [ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="2_q1vpg"]
@@ -125,20 +125,20 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lhowb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 25.0
 }]
 
-[node name="Map-complete" type="Node2D"]
+[node name="Map-complete" type="Node2D" unique_id=672121198]
 script = ExtResource("1_r45ud")
 goto_scene = "res://stages/save_game_room/save_game_room.tscn"
 world_name = "1"
 
-[node name="MusicLoader" parent="." instance=ExtResource("2_q1vpg")]
+[node name="MusicLoader" parent="." unique_id=650765873 instance=ExtResource("2_q1vpg")]
 music = Array[Resource]([ExtResource("3_wcsos")])
 
-[node name="Bg" type="Sprite2D" parent="."]
+[node name="Bg" type="Sprite2D" parent="." unique_id=1473213096]
 texture = ExtResource("4_xamsh")
 centered = false
 region_enabled = true
@@ -146,23 +146,23 @@ region_rect = Rect2(0, 0, 3333, 480)
 region_filter_clip_enabled = true
 metadata/_edit_lock_ = true
 
-[node name="GUI" type="CanvasLayer" parent="."]
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1887177252]
 
-[node name="MarioIcon" type="Sprite2D" parent="GUI"]
+[node name="MarioIcon" type="Sprite2D" parent="GUI" unique_id=2030640180]
 position = Vector2(581, 436)
 texture = ExtResource("5_752et")
 script = ExtResource("6_6glf5")
 metadata/_edit_lock_ = true
 
-[node name="WorldText" type="Sprite2D" parent="GUI"]
+[node name="WorldText" type="Sprite2D" parent="GUI" unique_id=2113612406]
 position = Vector2(320, -64)
 texture = ExtResource("7_ksanm")
 script = ExtResource("8_jrik0")
 
-[node name="BounceMarker" type="Marker2D" parent="GUI/WorldText"]
+[node name="BounceMarker" type="Marker2D" parent="GUI/WorldText" unique_id=873143764]
 position = Vector2(0, 146)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/WorldText"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GUI/WorldText" unique_id=1902971440]
 position = Vector2(0, 44)
 sprite_frames = SubResource("SpriteFrames_ypd1c")
 autoplay = "default"

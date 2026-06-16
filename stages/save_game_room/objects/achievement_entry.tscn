@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3ghumtr8whn6"]
+[gd_scene format=3 uid="uid://d3ghumtr8whn6"]
 
 [ext_resource type="Script" uid="uid://bf0sl2n3a3coc" path="res://stages/save_game_room/objects/achievement_entry.gd" id="1_xn476"]
 [ext_resource type="FontFile" uid="uid://dacnp4qwdpr2r" path="res://engine/fonts/mister_earl.otf" id="2_yjib0"]
@@ -19,10 +19,10 @@ spacing_glyph = 2
 spacing_top = -12
 spacing_bottom = -5
 
-[node name="AchievementEntry" type="HBoxContainer"]
+[node name="AchievementEntry" type="HBoxContainer" unique_id=216532987]
 script = ExtResource("1_xn476")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1443029617]
 layout_mode = 2
 size_flags_horizontal = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0.356863, 1)
@@ -31,7 +31,7 @@ theme_override_fonts/font = SubResource("FontVariation_ekh8b")
 theme_override_font_sizes/font_size = 20
 uppercase = true
 
-[node name="Toggle" type="Label" parent="."]
+[node name="Toggle" type="Label" parent="." unique_id=918776918]
 layout_mode = 2
 size_flags_horizontal = 8
 theme_override_colors/font_color = Color(0.972549, 0.533333, 0.439216, 1)

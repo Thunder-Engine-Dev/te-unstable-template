@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bj1k76pyo26l"]
+[gd_scene format=3 uid="uid://bj1k76pyo26l"]
 
 [ext_resource type="Script" uid="uid://cn67joohcklbn" path="res://engine/components/ui/generic/menu_items_controller.gd" id="1_nf66h"]
 [ext_resource type="Texture2D" uid="uid://cf48rsepfm4jo" path="res://engine/scenes/main_menu/textures/start_text.png" id="2_iu6ww"]
@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://8yrsglnn48ca" path="res://engine/scenes/main_menu/textures/quit_text.png" id="9_n5yei"]
 [ext_resource type="Script" uid="uid://voic2bihchnr" path="res://engine/scenes/main_menu/scripts/quit_selection.gd" id="10_m1i6r"]
 
-[node name="MainMenuControls" type="VBoxContainer"]
+[node name="MainMenuControls" type="VBoxContainer" unique_id=2112908617]
 offset_right = 104.0
 offset_bottom = 76.0
 script = ExtResource("1_nf66h")
 
-[node name="Start" type="TextureRect" parent="."]
+[node name="Start" type="TextureRect" parent="." unique_id=1432944755]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_iu6ww")
@@ -24,21 +24,21 @@ stretch_mode = 3
 script = ExtResource("3_tmk8m")
 selected_sound = ExtResource("4_1lqaa")
 
-[node name="Options" type="TextureRect" parent="."]
+[node name="Options" type="TextureRect" parent="." unique_id=234289029]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("5_yr7nl")
 stretch_mode = 3
 script = ExtResource("6_m52o5")
 
-[node name="Tweaks" type="TextureRect" parent="."]
+[node name="Tweaks" type="TextureRect" parent="." unique_id=1166255963]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("2_qoky7")
 stretch_mode = 3
 script = ExtResource("3_c2jjk")
 
-[node name="Quit" type="TextureRect" parent="."]
+[node name="Quit" type="TextureRect" parent="." unique_id=1577805874]
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("9_n5yei")

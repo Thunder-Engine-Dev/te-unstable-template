@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dsu3sit1o8qsd"]
+[gd_scene format=3 uid="uid://dsu3sit1o8qsd"]
 
 [ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="1_t2ybe"]
 [ext_resource type="Script" uid="uid://cffbuf10b1ltt" path="res://stages/main_menu/scripts/main_menu.gd" id="1_wb5qn"]
@@ -20,7 +20,7 @@
 atlas = ExtResource("3_b1pty")
 region = Rect2(0, 0, 1920, 480)
 
-[node name="MainMenuExample" type="Control"]
+[node name="MainMenuExample" type="Control" unique_id=1541693432]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -29,12 +29,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wb5qn")
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="." unique_id=2059146774]
 offset = Vector2(320, 240)
 position_smoothing_speed = 20.0
 script = ExtResource("2_g4kdh")
 
-[node name="Menu" type="Control" parent="."]
+[node name="Menu" type="Control" parent="." unique_id=1723361126]
 physics_interpolation_mode = 1
 clip_contents = true
 layout_mode = 1
@@ -45,12 +45,12 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
 
-[node name="MusicLoader" parent="Menu" instance=ExtResource("1_t2ybe")]
+[node name="MusicLoader" parent="Menu" unique_id=1454137826 instance=ExtResource("1_t2ybe")]
 music = Array[Resource]([ExtResource("2_r0pvw")])
 channel_id = 0
 play_immediately = false
 
-[node name="TextureRect" type="TextureRect" parent="Menu"]
+[node name="TextureRect" type="TextureRect" parent="Menu" unique_id=1251995848]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -59,7 +59,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("AtlasTexture_v54by")
 
-[node name="MainMenuBg" type="TextureRect" parent="Menu/TextureRect"]
+[node name="MainMenuBg" type="TextureRect" parent="Menu/TextureRect" unique_id=136117440]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,7 +69,7 @@ grow_vertical = 2
 texture = ExtResource("4_g2pwh")
 stretch_mode = 3
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Menu"]
+[node name="NinePatchRect" type="NinePatchRect" parent="Menu" unique_id=1355690680]
 modulate = Color(1, 1, 1, 0.705882)
 layout_mode = 1
 anchors_preset = 7
@@ -89,7 +89,7 @@ patch_margin_top = 33
 patch_margin_right = 33
 patch_margin_bottom = 33
 
-[node name="MainMenuControls" parent="Menu" instance=ExtResource("6_6iew1")]
+[node name="MainMenuControls" parent="Menu" unique_id=1652432605 instance=ExtResource("6_6iew1")]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -104,27 +104,27 @@ grow_horizontal = 2
 grow_vertical = 0
 focused = false
 
-[node name="Selector" type="Node2D" parent="Menu"]
+[node name="Selector" type="Node2D" parent="Menu" unique_id=1483418858]
 script = ExtResource("4_frmaf")
 smooth_speed = 0.4
 position_padding = 20
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Menu/Selector"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Menu/Selector" unique_id=1567186575]
 sprite_frames = ExtResource("5_x08ib")
 script = ExtResource("6_521mh")
 
-[node name="Node" type="Node" parent="Menu"]
+[node name="Node" type="Node" parent="Menu" unique_id=126960760]
 script = ExtResource("11_4wjuy")
 menu_items_controller_path = NodePath("../MainMenuControls")
 
-[node name="Settings" parent="." instance=ExtResource("7_r3wt2")]
+[node name="Settings" parent="." unique_id=261911876 instance=ExtResource("7_r3wt2")]
 layout_mode = 1
 main_menu_controls = "Menu/MainMenuControls"
 
-[node name="Controls" parent="." instance=ExtResource("8_iq8be")]
+[node name="Controls" parent="." unique_id=455955820 instance=ExtResource("8_iq8be")]
 layout_mode = 1
 
-[node name="Tweaks" parent="." instance=ExtResource("12_4lap8")]
+[node name="Tweaks" parent="." unique_id=797731036 instance=ExtResource("12_4lap8")]
 layout_mode = 1
 offset_left = -640.0
 offset_top = 480.0

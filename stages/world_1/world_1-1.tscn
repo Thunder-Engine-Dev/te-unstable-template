@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://w0xp68p3kqoa"]
+[gd_scene format=4 uid="uid://w0xp68p3kqoa"]
 
 [ext_resource type="Script" uid="uid://dh7ob1sbo8lx7" path="res://engine/scripts/classes/level/level.gd" id="1_aoarn"]
 [ext_resource type="AudioStream" uid="uid://bqiy8kvcsy0rk" path="res://engine/scripts/classes/level/complete.ogg" id="2_ykvcy"]
@@ -37,67 +37,70 @@ physics_layer_0/collision_layer = 112
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_45ioh")
 
-[sub_resource type="Resource" id="Resource_1rpsu"]
+[sub_resource type="Resource" id="Resource_smf7x"]
 resource_local_to_scene = true
 script = ExtResource("14_mssfw")
 creation_nodepack = ExtResource("13_s7dgs")
-creation_force_sibling = false
-trans_offset = Vector2(0, 0)
 trans_inheritances = 7
-trans_rotation = 0.0
-trans_scale = Vector2(1, 1)
-trans_skew = 0.0
-visi_z_index = 0
-visi_z_as_relative = true
-visi_y_sort_enabled = false
-custom_vars = {}
 
-[node name="LevelExample" type="Node2D"]
+[sub_resource type="Resource" id="Resource_s7dgs"]
+resource_local_to_scene = true
+script = ExtResource("14_mssfw")
+creation_nodepack = ExtResource("13_s7dgs")
+trans_inheritances = 7
+
+[sub_resource type="Resource" id="Resource_mssfw"]
+resource_local_to_scene = true
+script = ExtResource("14_mssfw")
+creation_nodepack = ExtResource("13_s7dgs")
+trans_inheritances = 7
+
+[node name="LevelExample" type="Node2D" unique_id=207365488]
 editor_description = "Enter map scene path in the \"Jump to Scene\" property here."
 script = ExtResource("1_aoarn")
 completion_music = ExtResource("2_ykvcy")
 jump_to_scene = "res://stages/world_1/map_1.tscn"
 
-[node name="SecretUnlocker" parent="." instance=ExtResource("3_xg2oj")]
+[node name="SecretUnlocker" parent="." unique_id=968729434 instance=ExtResource("3_xg2oj")]
 secrets = Array[String](["secret 1", "secret 2 progress"])
 progress_by_id = "1"
 progress_to = 2
 
-[node name="SecretUnlocker2" parent="." instance=ExtResource("3_xg2oj")]
+[node name="SecretUnlocker2" parent="." unique_id=31752605 instance=ExtResource("3_xg2oj")]
 secrets = Array[String](["secret 2 progress"])
 progress_by_id = "2"
 progress_to = 2
 
-[node name="MusicLoader" parent="." instance=ExtResource("3_1duyc")]
+[node name="MusicLoader" parent="." unique_id=1200414950 instance=ExtResource("3_1duyc")]
 music = Array[Resource]([ExtResource("4_01f5l")])
 volume_db = Array[float]([0.0])
 start_from_sec = Array[float]([0.0])
 
-[node name="Player" parent="." instance=ExtResource("5_smnd8")]
+[node name="Player" parent="." unique_id=1501117284 instance=ExtResource("5_smnd8")]
 position = Vector2(80, 400)
 
-[node name="PlayerCamera2D" type="Camera2D" parent="."]
+[node name="PlayerCamera2D" type="Camera2D" parent="." unique_id=488702174]
 editor_draw_screen = false
 script = ExtResource("7_w5a8o")
 metadata/_edit_lock_ = true
 
-[node name="CameraArea" parent="." instance=ExtResource("8_33wpv")]
+[node name="CameraArea" parent="." unique_id=273114710 instance=ExtResource("8_33wpv")]
 offset_right = 11008.0
 offset_bottom = 480.0
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=831843049]
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground" unique_id=1616015700]
 texture = SubResource("GradientTexture2D_8vs8l")
 centered = false
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1200627455]
 tile_map_data = PackedByteArray("AAACAA0AAAAAAAAAAAD//w4AAAAAAAAAAAD//w0AAAAAAAAAAAD//wwAAAAAAAAAAAD//wsAAAAAAAAAAAD//woAAAAAAAAAAAD//wkAAAAAAAAAAAD//wgAAAAAAAAAAAD//wcAAAAAAAAAAAD//wYAAAAAAAAAAAD//wUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD///z/AAAAAAAAAAD///v/AAAAAAAAAAD///r/AAAAAAAAAAD///n/AAAAAAAAAAD///j/AAAAAAAAAAD//w8AAAAAAAAAAAD//xAAAAAAAAAAAAD///f/AAAAAAAAAAD///b/AAAAAAAAAAADAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAVAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAYAAsAAAAAAAAAAAAZAAsAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_aq0co")
 
-[node name="HUD" parent="." instance=ExtResource("11_78wva")]
+[node name="HUD" parent="." unique_id=1440423564 instance=ExtResource("11_78wva")]
 
-[node name="WorldLabel" type="Label" parent="HUD"]
+[node name="WorldLabel" type="Label" parent="HUD" unique_id=1326732819]
 anchors_preset = -1
 anchor_left = 0.65
 anchor_right = 0.65
@@ -113,21 +116,21 @@ text = "WORLD
 1-1"
 horizontal_alignment = 1
 
-[node name="Objects" type="Node2D" parent="."]
+[node name="Objects" type="Node2D" parent="." unique_id=1802728807]
 
-[node name="QuestionBlock" parent="." instance=ExtResource("12_smf7x")]
+[node name="QuestionBlock" parent="." unique_id=1292802214 instance=ExtResource("12_smf7x")]
 position = Vector2(240, 272)
-result = SubResource("Resource_1rpsu")
+result = SubResource("Resource_smf7x")
 
-[node name="QuestionBlock2" parent="." instance=ExtResource("12_smf7x")]
+[node name="QuestionBlock2" parent="." unique_id=982007403 instance=ExtResource("12_smf7x")]
 position = Vector2(640, 224)
-result = SubResource("Resource_1rpsu")
+result = SubResource("Resource_s7dgs")
 
-[node name="QuestionBlock3" parent="." instance=ExtResource("12_smf7x")]
+[node name="QuestionBlock3" parent="." unique_id=1372771028 instance=ExtResource("12_smf7x")]
 position = Vector2(768, 224)
-result = SubResource("Resource_1rpsu")
+result = SubResource("Resource_mssfw")
 
-[node name="LabelMisterEarl" parent="." instance=ExtResource("15_smf7x")]
+[node name="LabelMisterEarl" parent="." unique_id=157467090 instance=ExtResource("15_smf7x")]
 z_index = -1
 offset_left = 176.0
 offset_top = 208.0
@@ -136,7 +139,7 @@ offset_bottom = 253.0
 text = "hit me to get
 an achievement!"
 
-[node name="LabelMisterEarl2" parent="." instance=ExtResource("15_smf7x")]
+[node name="LabelMisterEarl2" parent="." unique_id=1485092168 instance=ExtResource("15_smf7x")]
 z_index = -1
 offset_left = 640.0
 offset_top = 128.0

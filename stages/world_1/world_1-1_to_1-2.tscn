@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bcx8glx5q1qkc"]
+[gd_scene format=4 uid="uid://bcx8glx5q1qkc"]
 
 [ext_resource type="Script" uid="uid://bwpe24nufpj37" path="res://engine/scripts/classes/level_cutscene/level_cutscene.gd" id="1_cpxte"]
 [ext_resource type="Script" uid="uid://dlkn3px085yet" path="res://engine/scripts/classes/level_cutscene/cutscenes/cave_cutscene.gd" id="2_837hk"]
@@ -31,39 +31,39 @@ physics_layer_0/collision_layer = 112
 physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_jv5ci")
 
-[node name="CaveCutsceneExample" type="Node2D"]
+[node name="CaveCutsceneExample" type="Node2D" unique_id=1973681708]
 editor_description = "ENTER SCENE PATH INSIDE THE PIPEIN OBJECT!"
 script = ExtResource("1_cpxte")
 
-[node name="CutsceneLogic" type="Node" parent="."]
+[node name="CutsceneLogic" type="Node" parent="." unique_id=620039154]
 script = ExtResource("2_837hk")
 
-[node name="Player" parent="." instance=ExtResource("3_5d2k5")]
+[node name="Player" parent="." unique_id=403821265 instance=ExtResource("3_5d2k5")]
 position = Vector2(0, 400)
 
-[node name="PlayerCamera2D" type="Camera2D" parent="."]
+[node name="PlayerCamera2D" type="Camera2D" parent="." unique_id=239595995]
 editor_draw_screen = false
 script = ExtResource("4_4usi2")
 metadata/_edit_lock_ = true
 
-[node name="CameraArea" parent="." instance=ExtResource("5_enw1y")]
+[node name="CameraArea" parent="." unique_id=528381104 instance=ExtResource("5_enw1y")]
 offset_right = 640.0
 offset_bottom = 480.0
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=826582758]
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground" unique_id=1705567878]
 texture = SubResource("GradientTexture2D_2k6xq")
 centered = false
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1150080156]
 tile_map_data = PackedByteArray("AAACAA0AAAAAAAAAAAADAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAARAA0AAAAAAAAAAAASAA0AAAAAAAAAAAATAA0AAAAAAAAAAAAQAAsAAAAAAAAAAAAQAAwAAAAAAAAAAAABAA0AAAAAAAAAAAAAAA0AAAAAAAAAAAD//w0AAAAAAAAAAAAPAAsAAAAAAAAAAAAPAAwAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_111yb")
 
-[node name="HUD" parent="." instance=ExtResource("7_lg6h1")]
+[node name="HUD" parent="." unique_id=147592382 instance=ExtResource("7_lg6h1")]
 visible = false
 
-[node name="PipeIn" parent="." instance=ExtResource("5_dncr0")]
+[node name="PipeIn" parent="." unique_id=2096119081 instance=ExtResource("5_dncr0")]
 position = Vector2(472, 384)
 rotation = -1.5708
 warp_direction = 1
