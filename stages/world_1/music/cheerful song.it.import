@@ -1,0 +1,20 @@
+[remap]
+
+importer="dudejoe870.openmptimporter"
+type="AudioStreamMPT"
+uid="uid://c4qnlft1f03vn"
+path="res://.godot/imported/cheerful song.it-99415e93238f2d140e1f756c0a2c8886.res"
+
+[deps]
+
+source_file="res://stages/world_1/music/cheerful song.it"
+dest_files=["res://.godot/imported/cheerful song.it-99415e93238f2d140e1f756c0a2c8886.res"]
+
+[params]
+
+force/mono=false
+playback/loop_mode=1
+playback/interpolation=2
+playback/emulate_amiga_filter=0
+load/skip_plugins=false
+load/skip_subsongs_init=false

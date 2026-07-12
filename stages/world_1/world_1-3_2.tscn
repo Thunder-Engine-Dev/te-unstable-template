@@ -1,0 +1,143 @@
+[gd_scene format=4 uid="uid://dulml77f8yku5"]
+
+[ext_resource type="Script" uid="uid://dh7ob1sbo8lx7" path="res://engine/scripts/classes/level/level.gd" id="1_gdbai"]
+[ext_resource type="AudioStream" uid="uid://bqiy8kvcsy0rk" path="res://engine/scripts/classes/level/complete.ogg" id="2_msiuk"]
+[ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="3_ado1e"]
+[ext_resource type="Script" uid="uid://bxx54cyd4mjsq" path="res://engine/objects/core/music_loader/music_loader.gd" id="4_5w64j"]
+[ext_resource type="PackedScene" uid="uid://1do11cr84k7y" path="res://engine/objects/players/player.tscn" id="5_s1bmk"]
+[ext_resource type="Script" uid="uid://bhycqbfutplh0" path="res://engine/objects/players/player.gd" id="6_vcg7h"]
+[ext_resource type="Script" uid="uid://cugmax5psc2oo" path="res://engine/objects/players/player_camera_2d.gd" id="7_yq1qg"]
+[ext_resource type="PackedScene" uid="uid://yqftjpfskche" path="res://engine/components/cam_area/cam_area.tscn" id="8_wijix"]
+[ext_resource type="Script" uid="uid://dlpraskuccn72" path="res://engine/components/cam_area/cam_area.gd" id="9_md3hq"]
+[ext_resource type="TileSet" uid="uid://bgdkv8m3grmin" path="res://engine/tilesets/castle/castle_tileset.tres" id="10_gdbai"]
+[ext_resource type="PackedScene" uid="uid://ugxjxrdao5el" path="res://engine/components/hud/hud.tscn" id="11_tr477"]
+[ext_resource type="Script" uid="uid://b8yydtvt64i62" path="res://engine/components/hud/hud.gd" id="12_jb3de"]
+[ext_resource type="PackedScene" uid="uid://d0121yqkw7b6i" path="res://engine/objects/fluid/lava_area.tscn" id="13_msiuk"]
+[ext_resource type="Texture2D" uid="uid://bm62kwqcqdgkl" path="res://engine/tilesets/castle/gfx/BGCastle.png" id="13_s1bmk"]
+[ext_resource type="PackedScene" uid="uid://b88ks57c23lyq" path="res://engine/objects/effects/bubble/lava_bubbles.tscn" id="14_5w64j"]
+[ext_resource type="PackedScene" uid="uid://uhf6frao7p1m" path="res://engine/objects/enemies/podoboo/podoboo.tscn" id="15_s1bmk"]
+[ext_resource type="PackedScene" uid="uid://cx0wdn3m2f25y" path="res://engine/objects/bosses/bowser/bowser_lava_template.tscn" id="17_vcg7h"]
+[ext_resource type="PackedScene" uid="uid://boprmwc4aw1lr" path="res://engine/objects/bumping_blocks/question_block/templates/gray/Gray Coin Question Block.tscn" id="18_jb3de"]
+[ext_resource type="PackedScene" uid="uid://b8kgbn8f7lvf0" path="res://engine/objects/items/coin/coin.tscn" id="19_qt2r7"]
+[ext_resource type="Script" uid="uid://chvjy6okoognf" path="res://engine/objects/powerups/instance_powerup.gd" id="20_gpvjh"]
+[ext_resource type="PackedScene" uid="uid://b71msw28e37a" path="res://engine/objects/powerups/red_mushroom/red_mushroom.tscn" id="21_tvmno"]
+[ext_resource type="PackedScene" uid="uid://bsdcxwngf5hru" path="res://engine/objects/powerups/fire_flower/fire_flower.tscn" id="22_cqvv7"]
+[ext_resource type="PackedScene" uid="uid://dvmhwh1khygq6" path="res://engine/objects/bumping_blocks/brick/brick_grey.tscn" id="23_iudy5"]
+[ext_resource type="PackedScene" uid="uid://b8q8ngpgfgjl5" path="res://engine/objects/bosses/bowser/bowser.tscn" id="24_tvmno"]
+[ext_resource type="PackedScene" uid="uid://bq45lxt7bqoma" path="res://engine/objects/bosses/bowser/bowser_edge.tscn" id="25_cqvv7"]
+[ext_resource type="PackedScene" uid="uid://diivlwjl0y1i7" path="res://engine/objects/bosses/bowser/bowser_trigger.tscn" id="26_iudy5"]
+
+[sub_resource type="Curve2D" id="Curve2D_sexjf"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 32, 0, 0, 0, 0, 528, 32)
+}
+point_count = 2
+
+[sub_resource type="Resource" id="Resource_sexjf"]
+resource_local_to_scene = true
+script = ExtResource("20_gpvjh")
+creation_nodepack = ExtResource("19_qt2r7")
+trans_inheritances = 7
+
+[sub_resource type="Resource" id="Resource_oyks2"]
+resource_local_to_scene = true
+script = ExtResource("20_gpvjh")
+creation_fallback_node = ExtResource("21_tvmno")
+creation_nodepack = ExtResource("22_cqvv7")
+trans_inheritances = 7
+
+[node name="LevelCastleExample" type="Node2D" unique_id=1702970017]
+script = ExtResource("1_gdbai")
+completion_music = ExtResource("2_msiuk")
+jump_to_scene = "uid://gxkwsxwairg4"
+metadata/_custom_type_script = "uid://dh7ob1sbo8lx7"
+
+[node name="MusicLoader" type="Node" parent="." unique_id=1674830763 instance=ExtResource("3_ado1e")]
+script = ExtResource("4_5w64j")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=169935397 instance=ExtResource("5_s1bmk")]
+position = Vector2(112, 336)
+collision_mask = 16
+slide_on_ceiling = false
+floor_max_angle = 0.837758
+floor_snap_length = 12.0
+platform_on_leave = 2
+platform_floor_layers = 4294901776
+script = ExtResource("6_vcg7h")
+gravity_scale = 1.0
+max_falling_speed = 500.0
+
+[node name="PlayerCamera2D" type="Camera2D" parent="." unique_id=333476529]
+editor_draw_screen = false
+script = ExtResource("7_yq1qg")
+metadata/_edit_lock_ = true
+
+[node name="CameraArea" type="Control" parent="." unique_id=1790766850 instance=ExtResource("8_wijix")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 11008.0
+offset_bottom = 480.0
+script = ExtResource("9_md3hq")
+metadata/_edit_lock_ = true
+
+[node name="BowserTrigger" parent="." unique_id=2081189954 node_paths=PackedStringArray("trigger_bowser") instance=ExtResource("26_iudy5")]
+position = Vector2(832, 208)
+curve = SubResource("Curve2D_sexjf")
+trigger_area = Rect2(0, -64, 32, 608)
+trigger_bowser = NodePath("../Bowser")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=13901920]
+tile_map_data = PackedByteArray("AAACAA0AAAAAAAAAAAAAAA0AAAAAAAAAAAABAA0AAAABAAAAAAADAA0AAAABAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAABAAAAAAAGAA0AAAAAAAAAAAAHAA0AAAABAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAABAAAAAAAHAA4AAAAAAAAAAAAIAA4AAAABAAAAAAAFAA4AAAAAAAAAAAAGAA4AAAABAAAAAAADAA4AAAAAAAAAAAAEAA4AAAABAAAAAAABAA4AAAAAAAAAAAACAA4AAAABAAAAAAD//w4AAAAAAAAAAAAAAA4AAAABAAAAAAD//wwAAAAAAAAAAAAAAAwAAAABAAAAAAAAAAsAAAAAAAAAAAABAAsAAAABAAAAAAACAAsAAAAAAAAAAAADAAsAAAABAAAAAAABAAwAAAAAAAAAAAACAAwAAAABAAAAAAADAAwAAAAAAAAAAAAEAAwAAAABAAAAAAAFAAwAAAAAAAAAAAAGAAwAAAABAAAAAAAEAAsAAAAAAAAAAAAFAAsAAAABAAAAAAAGAAsAAAAAAAAAAAAHAAsAAAABAAAAAAAHAAwAAAAAAAAAAAAIAAwAAAABAAAAAAAJAA4AAAAAAAAAAAAKAA4AAAAAAAIAAAAKAA0AAAAAAAEAAAALAA0AAAABAAEAAAALAA4AAAABAAIAAAARAA0AAAACAAEAAAARAA4AAAACAAIAAAASAA0AAAADAAEAAAASAA4AAAADAAIAAAATAA4AAAABAAAAAAATAA0AAAAAAAAAAAAUAA0AAAABAAAAAAAUAA4AAAAAAAAAAAAVAA4AAAABAAAAAAAVAA0AAAAAAAAAAAAWAA0AAAABAAAAAAAWAA4AAAAAAAAAAAAXAA4AAAABAAAAAAAXAA0AAAAAAAAAAAAYAA0AAAABAAAAAAAYAA4AAAAAAAAAAAAZAA4AAAABAAAAAAAXAAsAAAAAAAAAAAAYAAsAAAABAAAAAAAYAAwAAAAAAAAAAAAZAAwAAAABAAAAAAAZAAsAAAAAAAAAAAAaAAsAAAABAAAAAAAaAAwAAAAAAAAAAAAbAAwAAAABAAAAAAAaAAoAAAAAAAAAAAAbAAoAAAABAAAAAAAZAAkAAAAAAAAAAAAaAAkAAAABAAAAAAAbAAkAAAAAAAAAAAAcAAkAAAABAAAAAAAbAAsAAAAAAAAAAAAcAAsAAAABAAAAAAAcAAoAAAAAAAAAAAAdAAoAAAABAAAAAAAZAA0AAAAAAAAAAAAaAA0AAAABAAAAAAAbAA0AAAAAAAAAAAAcAA0AAAABAAAAAAAdAA0AAAAAAAAAAAAeAA0AAAABAAAAAAAcAA4AAAAAAAAAAAAdAA4AAAABAAAAAAAaAA4AAAAAAAAAAAAbAA4AAAABAAAAAAAcAAwAAAAAAAAAAAAdAAwAAAABAAAAAAAeAAwAAAAAAAAAAAAfAAwAAAABAAAAAAAdAAsAAAAAAAAAAAAeAAsAAAABAAAAAAAdAAkAAAAAAAAAAAAeAAkAAAABAAAAAAAeAAoAAAAAAAAAAAAfAAoAAAABAAAAAAAfAAkAAAAAAAAAAAAgAAkAAAABAAAAAAAfAAsAAAAAAAAAAAAgAAsAAAABAAAAAAAfAA0AAAAAAAAAAAAgAA0AAAABAAAAAAAeAA4AAAAAAAAAAAAfAA4AAAABAAAAAAAgAA4AAAAAAAAAAAAhAA4AAAAAAAIAAAAgAAwAAAAAAAAAAAAhAAwAAAABAAAAAAAgAAoAAAAAAAAAAAAhAAoAAAABAAAAAAAhAAkAAAAAAAAAAAAiAAkAAAABAAAAAAAhAAsAAAAAAAAAAAAiAAsAAAABAAAAAAAhAA0AAAAAAAEAAAAiAA0AAAABAAEAAAAiAA4AAAABAAIAAAAiAAoAAAACAAAAAAAiAAwAAAACAAAAAAAjAAkAAgAAAAAAAAAkAAkAAgAAAAAAAAAlAAkAAgAAAAAAAAAmAAkAAgAAAAAAAAAnAAkAAgAAAAAAAAAoAAkAAgAAAAAAAAApAAkAAgAAAAAAAAAqAAkAAgAAAAAAAAArAAkAAgAAAAAAAAAsAAkAAgAAAAAAAAAtAAkAAgAAAAAAAAAuAAkAAgAAAAAAAAAvAAkAAgAAAAAAAAAwAAkAAgAAAAAAAAAxAAkAAgAAAAAAAAAyAA0AAAACAAEAAAAyAA4AAAACAAIAAAAzAA0AAAADAAEAAAAzAA4AAAADAAIAAAAyAAsAAAAAAAAAAAAzAAsAAAABAAAAAAAyAAkAAAAAAAAAAAAzAAkAAAABAAAAAAA0AAkAAAAAAAAAAAA1AAkAAAABAAAAAAAzAAoAAAAAAAAAAAA0AAoAAAABAAAAAAA0AAsAAAAAAAAAAAA1AAsAAAABAAAAAAAzAAwAAAAAAAAAAAA0AAwAAAABAAAAAAA0AA4AAAABAAAAAAA0AA0AAAAAAAAAAAA1AA0AAAABAAAAAAAyAAwAAAACAAAAAAAyAAoAAAACAAAAAAA2AAkAAAAAAAAAAAA3AAkAAAABAAAAAAA4AAkAAAAAAAAAAAA5AAkAAAABAAAAAAA6AAkAAAAAAAAAAAA7AAkAAAABAAAAAAA8AAkAAAACAAAAAAA8AAgAAAACAAAAAAA8AAcAAAACAAAAAAA8AAYAAAACAAAAAAA8AAUAAAACAAAAAAA8AAQAAAACAAAAAAA8AAMAAAACAAAAAAA8AAIAAAACAAAAAAA8AAEAAAACAAAAAAA8AAAAAAACAAAAAAA8AP//AAACAAAAAAA8AP7/AAACAAAAAAA1AAoAAAACAAAAAAA1AAwAAAACAAAAAAA1AA4AAAACAAAAAAD//wsAAAACAAAAAAD//woAAAACAAAAAAD//wkAAAACAAAAAAD//wgAAAACAAAAAAD//wcAAAACAAAAAAD//wYAAAACAAAAAAD//wUAAAACAAAAAAD//wQAAAACAAAAAAD//wMAAAACAAAAAAD//wIAAAACAAAAAAD//wEAAAACAAAAAAD//wAAAAACAAAAAAD/////AAACAAAAAAD///7/AAACAAAAAAD///3/AAACAAAAAAD///z/AAACAAAAAAD///v/AAACAAAAAAD///r/AAACAAAAAAA=")
+tile_set = ExtResource("10_gdbai")
+navigation_enabled = false
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=469826780 instance=ExtResource("11_tr477")]
+script = ExtResource("12_jb3de")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1032531797]
+z_index = -100
+repeat_size = Vector2(1023, 0)
+metadata/_edit_lock_ = true
+
+[node name="BgCastle" type="Sprite2D" parent="Parallax2D" unique_id=1316523903]
+texture = ExtResource("13_s1bmk")
+centered = false
+
+[node name="Lava" parent="." unique_id=743347879 instance=ExtResource("13_msiuk")]
+offset_left = 384.0
+offset_top = 416.0
+offset_right = 544.0
+offset_bottom = 480.0
+
+[node name="LavaBubbles" parent="." unique_id=1342365729 instance=ExtResource("14_5w64j")]
+position = Vector2(464, 432)
+
+[node name="Podoboo" parent="." unique_id=1884896969 instance=ExtResource("15_s1bmk")]
+position = Vector2(464, 432)
+interval = 1.0
+
+[node name="LavaBowser" parent="." unique_id=725840439 instance=ExtResource("17_vcg7h")]
+position = Vector2(1136, 432)
+
+[node name="QuestionBlock" parent="." unique_id=1851736272 instance=ExtResource("18_jb3de")]
+position = Vector2(208, 208)
+result = SubResource("Resource_sexjf")
+
+[node name="QuestionBlock2" parent="." unique_id=1579241819 instance=ExtResource("18_jb3de")]
+position = Vector2(240, 208)
+result = SubResource("Resource_oyks2")
+
+[node name="Brick" parent="." unique_id=1881880263 instance=ExtResource("23_iudy5")]
+position = Vector2(176, 208)
+
+[node name="Brick2" parent="." unique_id=292307438 instance=ExtResource("23_iudy5")]
+position = Vector2(144, 208)
+
+[node name="Bowser" parent="." unique_id=712077096 instance=ExtResource("24_tvmno")]
+position = Vector2(1504, 256)
+
+[node name="BowserEdge" parent="." unique_id=818249389 instance=ExtResource("25_cqvv7")]
+position = Vector2(1104, 48)
+
+[node name="BowserEdge2" parent="." unique_id=433080686 instance=ExtResource("25_cqvv7")]
+position = Vector2(1616, 48)

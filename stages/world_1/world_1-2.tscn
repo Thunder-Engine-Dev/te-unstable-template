@@ -1,0 +1,347 @@
+[gd_scene format=4 uid="uid://dxnb0kx4maf1m"]
+
+[ext_resource type="Script" uid="uid://dh7ob1sbo8lx7" path="res://engine/scripts/classes/level/level.gd" id="1_t6tkj"]
+[ext_resource type="AudioStream" uid="uid://bqiy8kvcsy0rk" path="res://engine/scripts/classes/level/complete.ogg" id="2_fwmql"]
+[ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="3_e3lq8"]
+[ext_resource type="Script" uid="uid://bxx54cyd4mjsq" path="res://engine/objects/core/music_loader/music_loader.gd" id="4_s045k"]
+[ext_resource type="AudioStream" uid="uid://c4qnlft1f03vn" path="res://stages/world_1/music/cheerful song.it" id="5_fwmql"]
+[ext_resource type="PackedScene" uid="uid://1do11cr84k7y" path="res://engine/objects/players/player.tscn" id="5_luktd"]
+[ext_resource type="Script" uid="uid://bhycqbfutplh0" path="res://engine/objects/players/player.gd" id="6_mtuop"]
+[ext_resource type="Script" uid="uid://cugmax5psc2oo" path="res://engine/objects/players/player_camera_2d.gd" id="7_ufexb"]
+[ext_resource type="PackedScene" uid="uid://yqftjpfskche" path="res://engine/components/cam_area/cam_area.tscn" id="8_iolee"]
+[ext_resource type="Script" uid="uid://dlpraskuccn72" path="res://engine/components/cam_area/cam_area.gd" id="9_yn56f"]
+[ext_resource type="TileSet" uid="uid://bkax37l1q8oni" path="res://engine/tilesets/underground/underground.tres" id="11_fwmql"]
+[ext_resource type="PackedScene" uid="uid://ugxjxrdao5el" path="res://engine/components/hud/hud.tscn" id="11_vqb4g"]
+[ext_resource type="Script" uid="uid://b8yydtvt64i62" path="res://engine/components/hud/hud.gd" id="12_ngokg"]
+[ext_resource type="Texture2D" uid="uid://bw6tt0msakat6" path="res://engine/tilesets/underground/gfx/underground.png" id="14_e3lq8"]
+[ext_resource type="FontFile" uid="uid://b1pi0t5byork2" path="res://engine/components/hud/hud_font.fnt" id="14_s045k"]
+[ext_resource type="PackedScene" uid="uid://dh4kf1w7jyseo" path="res://engine/objects/warps/pipe_in.tscn" id="16_mtuop"]
+[ext_resource type="PackedScene" uid="uid://u383towqhd0i" path="res://engine/objects/warps/pipe_out.tscn" id="17_ufexb"]
+[ext_resource type="PackedScene" uid="uid://7p86qw2ptq4o" path="res://engine/objects/platform/custom_platforms/platform_blue.tscn" id="18_iolee"]
+[ext_resource type="PackedScene" uid="uid://cno8qn60lpnvv" path="res://engine/objects/enemies/koopas/koopa_green.tscn" id="19_yn56f"]
+[ext_resource type="Script" uid="uid://0h3x5dwndovw" path="res://engine/scripts/nodes/effects/quality_visible.gd" id="20_yn56f"]
+[ext_resource type="Texture2D" uid="uid://ub283slvxgxe" path="res://engine/tilesets/underground/gfx/pipe_bg.png" id="21_a4byd"]
+[ext_resource type="PackedScene" uid="uid://eyqjecs0sfv0" path="res://engine/objects/effects/bubble/bubble_bg_generator.tscn" id="22_m0xqr"]
+[ext_resource type="PackedScene" uid="uid://bvf7eu5tf645m" path="res://engine/objects/bumping_blocks/question_block/templates/blue/Blue Coin Question Block.tscn" id="23_h8fri"]
+[ext_resource type="PackedScene" uid="uid://b71msw28e37a" path="res://engine/objects/powerups/red_mushroom/red_mushroom.tscn" id="24_ba5on"]
+[ext_resource type="PackedScene" uid="uid://puywhag5cs1a" path="res://engine/objects/powerups/boomerang_flower/boomerang_flower.tscn" id="25_tqa2n"]
+[ext_resource type="Script" uid="uid://chvjy6okoognf" path="res://engine/objects/powerups/instance_powerup.gd" id="26_akw47"]
+[ext_resource type="PackedScene" uid="uid://b8kgbn8f7lvf0" path="res://engine/objects/items/coin/coin.tscn" id="27_uchd8"]
+[ext_resource type="PackedScene" uid="uid://3tgyqgylcvji" path="res://engine/objects/bumping_blocks/brick/brick_blue.tscn" id="28_y0f3h"]
+[ext_resource type="PackedScene" uid="uid://c1tnw67dn7dmw" path="res://engine/objects/bumping_blocks/brick/templates/Coin Brick Blue.tscn" id="29_h8fri"]
+[ext_resource type="PackedScene" uid="uid://dfm7d4qtja67b" path="res://engine/objects/core/finish_line/finish_line.tscn" id="30_tqa2n"]
+[ext_resource type="Texture2D" uid="uid://cube175uuy8i6" path="res://engine/objects/core/finish_line/textures/finishline.png" id="31_akw47"]
+[ext_resource type="PackedScene" uid="uid://ddwxc43m3q1c6" path="res://engine/objects/core/checkpoint/checkpoint.tscn" id="32_akw47"]
+
+[sub_resource type="Gradient" id="Gradient_akw47"]
+colors = PackedColorArray(0, 0, 0, 1, 0.61960787, 0.61960787, 0.61960787, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_13qdw"]
+gradient = SubResource("Gradient_akw47")
+width = 640
+height = 176
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_yn56f"]
+colors = PackedColorArray(0.0627451, 0.0627451, 0.0627451, 1, 0, 0, 0.2509804, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_a4byd"]
+gradient = SubResource("Gradient_yn56f")
+width = 1024
+height = 480
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Curve2D" id="Curve2D_a4byd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1104, -16, 0, 0, 0, 0, 1104, 496)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(64, 26)
+
+[sub_resource type="Resource" id="Resource_t1muo"]
+resource_local_to_scene = true
+script = ExtResource("26_akw47")
+creation_fallback_node = ExtResource("24_ba5on")
+creation_nodepack = ExtResource("25_tqa2n")
+trans_inheritances = 7
+
+[sub_resource type="Resource" id="Resource_esd43"]
+resource_local_to_scene = true
+script = ExtResource("26_akw47")
+creation_nodepack = ExtResource("27_uchd8")
+trans_inheritances = 7
+
+[sub_resource type="Curve2D" id="Curve2D_m0xqr"]
+_data = {
+"points": PackedVector2Array(-156, 84, 156, -84, 1504, 128, 242, -4, -242, 4, 1648, 240, -199, -9, 199, 9, 1856, 352)
+}
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_tqa2n"]
+colors = PackedColorArray(0.47843137, 0.47843137, 0.47843137, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xrivr"]
+gradient = SubResource("Gradient_tqa2n")
+width = 120
+height = 120
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8571429, 0.14285715)
+metadata/_snap_enabled = true
+metadata/_snap_count = 7
+
+[node name="LevelCaveExample" type="Node2D" unique_id=983058398]
+script = ExtResource("1_t6tkj")
+completion_music = ExtResource("2_fwmql")
+jump_to_scene = "res://stages/world_1/map_1.tscn"
+lighting_force_hide_on_start = false
+metadata/_custom_type_script = "uid://dh7ob1sbo8lx7"
+
+[node name="MusicLoader" type="Node" parent="." unique_id=1674830763 instance=ExtResource("3_e3lq8")]
+script = ExtResource("4_s045k")
+music = Array[Resource]([ExtResource("5_fwmql")])
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=169935397 instance=ExtResource("5_luktd")]
+position = Vector2(112, 0)
+collision_mask = 16
+slide_on_ceiling = false
+floor_max_angle = 0.837758
+floor_snap_length = 12.0
+platform_on_leave = 2
+platform_floor_layers = 4294901776
+script = ExtResource("6_mtuop")
+gravity_scale = 1.0
+max_falling_speed = 500.0
+
+[node name="PlayerCamera2D" type="Camera2D" parent="." unique_id=1823424864]
+editor_draw_screen = false
+script = ExtResource("7_ufexb")
+metadata/_edit_lock_ = true
+
+[node name="CameraArea" type="Control" parent="." unique_id=1790766850 instance=ExtResource("8_iolee")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+script = ExtResource("9_yn56f")
+
+[node name="CameraArea2" parent="." unique_id=1786940978 instance=ExtResource("8_iolee")]
+offset_left = 672.0
+offset_right = 2752.0
+offset_bottom = 480.0
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1321212875]
+tile_map_data = PackedByteArray("AAAQAAsAAwADAAAAAAAQAAwAAwADAAEAAAAOAAsAAwACAAAAAAAOAAwAAwACAAEAAAAPAAsAAwADAAAAAAAPAAwAAwADAAEAAAAQAAkAAwAAAAAAAAAQAAoAAwAAAAEAAAARAAkAAwABAAAAAAARAAoAAwABAAEAAAAQAA0AAwAAAAEAAAARAA0AAwABAAEAAAA=")
+tile_set = ExtResource("11_fwmql")
+navigation_enabled = false
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1688982497]
+tile_map_data = PackedByteArray("AAACAA0AAQABAAAAAAAUAA8AAQACAAIAAAAUAA4AAQACAAEAAAAUAA0AAQACAAAAAAATAA8AAQABAAIAAAATAA4AAQABAAEAAAATAA0AAQABAAAAAAASAA8AAQABAAIAAAASAA4AAQABAAEAAAASAA0AAQABAAAAAAARAA8AAQABAAIAAAARAA4AAQABAAEAAAARAA0AAQABAAAAAAAQAA8AAQABAAIAAAAQAA4AAQABAAEAAAAQAA0AAQABAAAAAAAPAA8AAQABAAIAAAAPAA4AAQABAAEAAAAPAA0AAQABAAAAAAAOAA8AAQABAAIAAAAOAA4AAQABAAEAAAAOAA0AAQABAAAAAAANAA8AAQABAAIAAAANAA4AAQABAAEAAAANAA0AAQABAAAAAAAMAA8AAQABAAIAAAAMAA4AAQABAAEAAAAMAA0AAQABAAAAAAALAA8AAQABAAIAAAALAA4AAQABAAEAAAALAA0AAQABAAAAAAAKAA8AAQABAAIAAAAKAA4AAQABAAEAAAAKAA0AAQABAAAAAAAJAA8AAQABAAIAAAAJAA4AAQABAAEAAAAJAA0AAQABAAAAAAAIAA8AAQABAAIAAAAIAA4AAQABAAEAAAAIAA0AAQABAAAAAAAHAA8AAQABAAIAAAAHAA4AAQABAAEAAAAHAA0AAQABAAAAAAAGAA8AAQABAAIAAAAGAA4AAQABAAEAAAAGAA0AAQABAAAAAAAFAA8AAQABAAIAAAAFAA4AAQABAAEAAAAFAA0AAQABAAAAAAAEAA8AAQABAAIAAAAEAA4AAQABAAEAAAAEAA0AAQABAAAAAAADAA8AAQABAAIAAAADAA4AAQABAAEAAAADAA0AAQABAAAAAAACAA8AAQABAAIAAAACAA4AAQABAAEAAAABAA8AAQABAAIAAAABAA4AAQABAAEAAAABAA0AAQABAAAAAAAAAA8AAQABAAIAAAAAAA4AAQABAAEAAAAAAA0AAQABAAAAAAD//w8AAQAAAAIAAAD//w4AAQAAAAEAAAD//w0AAQAAAAAAAAD//wwAAAAAAAAAAAD//wsAAAAAAAAAAAD//woAAAAAAAAAAAD//wkAAAAAAAAAAAD//wgAAAAAAAAAAAD//wcAAAAAAAAAAAD//wYAAAAAAAAAAAD//wUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD///z/AAAAAAAAAAD///v/AAAAAAAAAAD///r/AAAAAAAAAAD///n/AAAAAAAAAAD///j/AAAAAAAAAAAQAAsAAwAAAAEAAAAQAAwAAwAAAAEAAAARAAsAAwABAAEAAAARAAwAAwABAAEAAAAYAAEAAwAAAAEAAAAYAAIAAwAAAAIAAAAZAAEAAwABAAEAAAAZAAIAAwABAAIAAAAYAAAAAwAAAAEAAAAZAAAAAwABAAEAAAAYAP//AwAAAAEAAAAZAP//AwABAAEAAAAYAP7/AwAAAAEAAAAZAP7/AwABAAEAAAAYAP3/AwAAAAEAAAAZAP3/AwABAAEAAAAYAPz/AwAAAAEAAAAZAPz/AwABAAEAAAAYAPv/AwAAAAEAAAAZAPv/AwABAAEAAAAYAPr/AwAAAAEAAAAZAPr/AwABAAEAAAAYAPn/AwAAAAEAAAAZAPn/AwABAAEAAAAUAAwAAAAAAAAAAAAUAAsAAAAAAAAAAAAUAAoAAAAAAAAAAAAUAAkAAAAAAAAAAAAUAAgAAAAAAAAAAAAUAAcAAAAAAAAAAAAUAAYAAAAAAAAAAAAUAAUAAAAAAAAAAAAUAAQAAAAAAAAAAAAUAAMAAAAAAAAAAAAUAAIAAAAAAAAAAAAUAAEAAAAAAAAAAAAUAAAAAAAAAAAAAAAUAP//AAAAAAAAAAAUAP7/AAAAAAAAAAAUAP3/AAAAAAAAAAAUAPz/AAAAAAAAAAAUAPv/AAAAAAAAAAAUAPr/AAAAAAAAAAAUAPn/AAAAAAAAAAAUAPj/AAAAAAAAAAAXAA0AAAAAAAAAAAAYAA0AAAAAAAAAAAAZAA0AAAAAAAAAAAAaAA0AAAAAAAAAAAAbAA0AAAAAAAAAAAAcAA0AAAAAAAAAAAAdAA0AAAAAAAAAAAAeAA0AAAAAAAAAAAAfAA0AAAAAAAAAAAAgAA0AAAAAAAAAAAAIAAMAAgAAAAAAAgAbAAMAAgAAAAAAAgAQAAMAAgAAAAAAAwAuAAYAAAAAAAAAAAAvAAYAAAAAAAAAAABYAA8AAQABAAIAAABYAA4AAQABAAEAAABYAA0AAQABAAAAAABXAA8AAQABAAIAAABXAA4AAQABAAEAAABXAA0AAQABAAAAAABWAA8AAQABAAIAAABWAA4AAQABAAEAAABWAA0AAQABAAAAAABVAA8AAQABAAIAAABVAA4AAQABAAEAAABVAA0AAQABAAAAAABUAA8AAQABAAIAAABUAA4AAQABAAEAAABUAA0AAQABAAAAAABTAA8AAQABAAIAAABTAA4AAQABAAEAAABTAA0AAQABAAAAAABSAA8AAQABAAIAAABSAA4AAQABAAEAAABSAA0AAQABAAAAAABRAA8AAQABAAIAAABRAA4AAQABAAEAAABRAA0AAQABAAAAAABQAA8AAQABAAIAAABQAA4AAQABAAEAAABQAA0AAQABAAAAAABPAA8AAQABAAIAAABPAA4AAQABAAEAAABPAA0AAQABAAAAAABOAA8AAQABAAIAAABOAA4AAQABAAEAAABOAA0AAQABAAAAAABNAA8AAQABAAIAAABNAA4AAQABAAEAAABNAA0AAQABAAAAAABMAA8AAQABAAIAAABMAA4AAQABAAEAAABMAA0AAQABAAAAAABLAA8AAQABAAIAAABLAA4AAQABAAEAAABLAA0AAQABAAAAAABKAA8AAQABAAIAAABKAA4AAQABAAEAAABKAA0AAQABAAAAAABJAA8AAQABAAIAAABJAA4AAQABAAEAAABJAA0AAQABAAAAAABIAA8AAQABAAIAAABIAA4AAQABAAEAAABIAA0AAQABAAAAAABHAA8AAQABAAIAAABHAA4AAQABAAEAAABHAA0AAQABAAAAAABGAA8AAQABAAIAAABGAA4AAQABAAEAAABGAA0AAQABAAAAAABFAA8AAQABAAIAAABFAA4AAQABAAEAAABFAA0AAQABAAAAAABEAA8AAQABAAIAAABEAA4AAQABAAEAAABEAA0AAQABAAAAAABDAA8AAQAAAAIAAABDAA4AAQAAAAEAAABDAA0AAQAAAAAAAABbAA8AAQACAAIAAABbAA4AAQACAAEAAABbAA0AAQACAAAAAABaAA8AAQABAAIAAABaAA4AAQABAAEAAABaAA0AAQABAAAAAABZAA8AAQABAAIAAABZAA4AAQABAAEAAABZAA0AAQABAAAAAABbAAwAAAAAAAAAAABbAAsAAAAAAAAAAABbAAoAAAAAAAAAAABbAAkAAAAAAAAAAABbAAgAAAAAAAAAAABbAAcAAAAAAAAAAABbAAYAAAAAAAAAAABbAAUAAAAAAAAAAABbAAQAAAAAAAAAAABbAAMAAAAAAAAAAABbAAIAAAAAAAAAAABbAAEAAAAAAAAAAABbAAAAAAAAAAAAAABbAP//AAAAAAAAAABbAP7/AAAAAAAAAABbAP3/AAAAAAAAAABbAPz/AAAAAAAAAABbAPv/AAAAAAAAAABbAPr/AAAAAAAAAAA=")
+tile_set = ExtResource("11_fwmql")
+navigation_enabled = false
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=469826780 instance=ExtResource("11_vqb4g")]
+script = ExtResource("12_ngokg")
+
+[node name="PointLight2D" type="PointLight2D" parent="HUD" unique_id=697999458]
+position = Vector2(320, 88)
+blend_mode = 1
+range_layer_min = -512
+texture = SubResource("GradientTexture2D_13qdw")
+
+[node name="WorldLabel" type="Label" parent="HUD" unique_id=1057669361]
+anchors_preset = -1
+anchor_left = 0.65
+anchor_right = 0.65
+offset_left = -40.0
+offset_top = 16.0
+offset_right = 43.0
+offset_bottom = 49.0
+grow_horizontal = 2
+pivot_offset = Vector2(0, 9)
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("14_s045k")
+text = "WORLD
+1-2"
+horizontal_alignment = 1
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=429477944]
+z_index = -100
+repeat_size = Vector2(1024, 0)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=606977213]
+texture = SubResource("GradientTexture2D_a4byd")
+centered = false
+
+[node name="Underground" type="Sprite2D" parent="Parallax2D" unique_id=1482320472]
+modulate = Color(1, 1, 1, 0.60784316)
+texture_repeat = 2
+texture = ExtResource("14_e3lq8")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1024, 512)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=717386671]
+color = Color(0.5882353, 0.5882353, 0.5882353, 1)
+script = ExtResource("20_yn56f")
+medium = true
+
+[node name="PipeIn" parent="." unique_id=1607065405 instance=ExtResource("16_mtuop")]
+position = Vector2(432, 384)
+rotation = -1.5707941
+warp_direction = 1
+warp_to = NodePath("../PipeOut")
+use_blur_transition = true
+
+[node name="PipeIn2" parent="." unique_id=1529306039 instance=ExtResource("16_mtuop")]
+position = Vector2(544, 272)
+warp_to = NodePath("../PipeOut")
+use_blur_transition = true
+
+[node name="PipeOut" parent="." unique_id=174359357 instance=ExtResource("17_ufexb")]
+position = Vector2(800, 80)
+rotation = 3.1415882
+warp_direction = 3
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1244196782]
+curve = SubResource("Curve2D_a4byd")
+
+[node name="PlatformPath" parent="Path2D" unique_id=1073629525 instance=ExtResource("18_iolee")]
+position = Vector2(1104, -16)
+loop = true
+speed = 100.0
+loop_backwards = false
+warp_objects_on_end = false
+smooth_enabled = false
+
+[node name="PlatformPath2" parent="Path2D" unique_id=1541125342 instance=ExtResource("18_iolee")]
+position = Vector2(1104, 154.6496)
+progress = 170.6496
+loop = true
+speed = 100.0
+loop_backwards = false
+warp_objects_on_end = false
+smooth_enabled = false
+
+[node name="PlatformPath3" parent="Path2D" unique_id=2055991939 instance=ExtResource("18_iolee")]
+position = Vector2(1104, 325.2992)
+progress = 341.2992
+loop = true
+speed = 100.0
+loop_backwards = false
+warp_objects_on_end = false
+smooth_enabled = false
+
+[node name="KoopaGreen" parent="." unique_id=253245860 instance=ExtResource("19_yn56f")]
+position = Vector2(1040, 400)
+
+[node name="PipeBg" type="Sprite2D" parent="." unique_id=1572153626]
+modulate = Color(1, 1, 1, 0.3764706)
+z_index = -11
+position = Vector2(352, 0)
+texture = ExtResource("21_a4byd")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 480)
+
+[node name="BubbleBGGenerator" parent="PipeBg" unique_id=1701472854 instance=ExtResource("22_m0xqr")]
+position = Vector2(32, 416)
+
+[node name="PipeBg2" type="Sprite2D" parent="." unique_id=1109116844]
+modulate = Color(1, 1, 1, 0.3764706)
+z_index = -11
+position = Vector2(192, 240)
+texture = ExtResource("21_a4byd")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 240)
+
+[node name="BubbleBGGenerator" parent="PipeBg2" unique_id=818092300 instance=ExtResource("22_m0xqr")]
+position = Vector2(32, 176)
+
+[node name="Area2D" type="Area2D" parent="PipeBg2" unique_id=1453453357 groups=["#no_bubbles"]]
+position = Vector2(32, 0)
+collision_layer = 4096
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeBg2/Area2D" unique_id=1986732868]
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="QuestionBlock" parent="." unique_id=904378010 instance=ExtResource("23_h8fri")]
+position = Vector2(208, 240)
+result = SubResource("Resource_t1muo")
+
+[node name="QuestionBlock2" parent="." unique_id=1460397206 instance=ExtResource("23_h8fri")]
+position = Vector2(240, 240)
+result = SubResource("Resource_esd43")
+
+[node name="Brick" parent="." unique_id=272787534 instance=ExtResource("28_y0f3h")]
+position = Vector2(176, 240)
+
+[node name="Brick2" parent="." unique_id=468483811 instance=ExtResource("28_y0f3h")]
+position = Vector2(272, 240)
+
+[node name="PlatformPath" parent="." unique_id=916348959 instance=ExtResource("18_iolee")]
+position = Vector2(1328, 192)
+falling_enabled = true
+
+[node name="Path2D2" type="Path2D" parent="." unique_id=1010739003]
+position = Vector2(128, 0)
+curve = SubResource("Curve2D_m0xqr")
+
+[node name="PlatformPath" parent="Path2D2" unique_id=1750754726 instance=ExtResource("18_iolee")]
+position = Vector2(1504, 128)
+
+[node name="CoinBrick" parent="." unique_id=1758108504 instance=ExtResource("29_h8fri")]
+position = Vector2(880, 272)
+
+[node name="Coin" parent="." unique_id=829951400 instance=ExtResource("27_uchd8")]
+position = Vector2(1488, 112)
+
+[node name="Coin2" parent="." unique_id=327724680 instance=ExtResource("27_uchd8")]
+position = Vector2(1520, 112)
+
+[node name="FinishLine" parent="." unique_id=633176209 instance=ExtResource("30_tqa2n")]
+position = Vector2(2304, 416)
+
+[node name="PointLight2D" type="PointLight2D" parent="FinishLine" unique_id=1918077253]
+position = Vector2(16, -14)
+range_layer_min = -512
+texture = SubResource("GradientTexture2D_xrivr")
+script = ExtResource("20_yn56f")
+medium = true
+
+[node name="PointLight2D2" type="PointLight2D" parent="FinishLine" unique_id=1018646414]
+position = Vector2(176, -272)
+range_layer_min = -512
+texture = SubResource("GradientTexture2D_xrivr")
+script = ExtResource("20_yn56f")
+medium = true
+
+[node name="PointLight2D3" type="PointLight2D" parent="FinishLine" unique_id=482601256]
+position = Vector2(240, -272)
+range_layer_min = -512
+texture = SubResource("GradientTexture2D_xrivr")
+script = ExtResource("20_yn56f")
+medium = true
+
+[node name="Finishline2" type="Sprite2D" parent="FinishLine" unique_id=1797819629]
+position = Vector2(160, 0)
+texture = ExtResource("31_akw47")
+centered = false
+region_enabled = true
+region_rect = Rect2(159, 224, 96, 16)
+
+[node name="Finishline3" type="Sprite2D" parent="FinishLine" unique_id=209515510]
+texture = ExtResource("31_akw47")
+centered = false
+region_enabled = true
+region_rect = Rect2(223, 224, 32, 16)
+
+[node name="Checkpoint" parent="." unique_id=1170161289 instance=ExtResource("32_akw47")]
+position = Vector2(800, 416)

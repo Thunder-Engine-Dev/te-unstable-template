@@ -4,17 +4,20 @@
 [ext_resource type="AudioStream" uid="uid://bqiy8kvcsy0rk" path="res://engine/scripts/classes/level/complete.ogg" id="2_ykvcy"]
 [ext_resource type="PackedScene" uid="uid://d3srfe2r6fg2u" path="res://engine/objects/core/music_loader/music_loader.tscn" id="3_1duyc"]
 [ext_resource type="PackedScene" uid="uid://cat0b6208nfnh" path="res://components/secrets_manager/secret_unlocker.tscn" id="3_xg2oj"]
-[ext_resource type="AudioStream" uid="uid://mqegl4h6uttp" path="res://stages/world_1/music/kyze - logic world.xm" id="4_01f5l"]
+[ext_resource type="AudioStream" uid="uid://45o7xspam6w4" path="res://stages/world_1/music/algar_-_im_leaving_this_world_tonight.xm" id="5_smf7x"]
 [ext_resource type="PackedScene" uid="uid://1do11cr84k7y" path="res://engine/objects/players/player.tscn" id="5_smnd8"]
 [ext_resource type="Script" uid="uid://cugmax5psc2oo" path="res://engine/objects/players/player_camera_2d.gd" id="7_w5a8o"]
 [ext_resource type="PackedScene" uid="uid://yqftjpfskche" path="res://engine/components/cam_area/cam_area.tscn" id="8_33wpv"]
 [ext_resource type="FontFile" uid="uid://b1pi0t5byork2" path="res://engine/components/hud/hud_font.fnt" id="9_5ai5j"]
-[ext_resource type="Texture2D" uid="uid://djwe62jh83kf" path="res://engine/tilesets/overworld/hard_block.png" id="10_vj0s4"]
+[ext_resource type="TileSet" uid="uid://duodk2nyl4k2h" path="res://engine/tilesets/overworld/overworld.tres" id="9_s7dgs"]
 [ext_resource type="PackedScene" uid="uid://ugxjxrdao5el" path="res://engine/components/hud/hud.tscn" id="11_78wva"]
 [ext_resource type="PackedScene" uid="uid://5ssr5jwpsldi" path="res://engine/objects/bumping_blocks/question_block/templates/Coin Question Block.tscn" id="12_smf7x"]
 [ext_resource type="PackedScene" uid="uid://b8kgbn8f7lvf0" path="res://engine/objects/items/coin/coin.tscn" id="13_s7dgs"]
 [ext_resource type="Script" uid="uid://chvjy6okoognf" path="res://engine/objects/powerups/instance_powerup.gd" id="14_mssfw"]
 [ext_resource type="PackedScene" uid="uid://bj3fvmd6bah6d" path="res://engine/fonts/templates/mister_earl_font.tscn" id="15_smf7x"]
+[ext_resource type="PackedScene" uid="uid://dfm7d4qtja67b" path="res://engine/objects/core/finish_line/finish_line.tscn" id="16_mssfw"]
+[ext_resource type="PackedScene" uid="uid://vqn6y17pt5mx" path="res://engine/objects/enemies/goombas/goomba.tscn" id="17_mssfw"]
+[ext_resource type="PackedScene" uid="uid://dgcgfl28trox0" path="res://engine/objects/springboard/springboard.tscn" id="18_1rpsu"]
 
 [sub_resource type="Gradient" id="Gradient_4mqjo"]
 colors = PackedColorArray(0.415686, 0.415686, 0.972549, 1, 0.952941, 0.952941, 0.952941, 1)
@@ -24,18 +27,6 @@ gradient = SubResource("Gradient_4mqjo")
 width = 640
 height = 480
 fill_to = Vector2(0, 1)
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_45ioh"]
-texture = ExtResource("10_vj0s4")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-
-[sub_resource type="TileSet" id="TileSet_aq0co"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 112
-physics_layer_0/collision_mask = 0
-sources/0 = SubResource("TileSetAtlasSource_45ioh")
 
 [sub_resource type="Resource" id="Resource_smf7x"]
 resource_local_to_scene = true
@@ -72,7 +63,7 @@ progress_by_id = "2"
 progress_to = 2
 
 [node name="MusicLoader" parent="." unique_id=1200414950 instance=ExtResource("3_1duyc")]
-music = Array[Resource]([ExtResource("4_01f5l")])
+music = Array[Resource]([ExtResource("5_smf7x")])
 volume_db = Array[float]([0.0])
 start_from_sec = Array[float]([0.0])
 
@@ -85,7 +76,7 @@ script = ExtResource("7_w5a8o")
 metadata/_edit_lock_ = true
 
 [node name="CameraArea" parent="." unique_id=273114710 instance=ExtResource("8_33wpv")]
-offset_right = 11008.0
+offset_right = 1888.0
 offset_bottom = 480.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=831843049]
@@ -95,8 +86,8 @@ texture = SubResource("GradientTexture2D_8vs8l")
 centered = false
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1200627455]
-tile_map_data = PackedByteArray("AAACAA0AAAAAAAAAAAD//w4AAAAAAAAAAAD//w0AAAAAAAAAAAD//wwAAAAAAAAAAAD//wsAAAAAAAAAAAD//woAAAAAAAAAAAD//wkAAAAAAAAAAAD//wgAAAAAAAAAAAD//wcAAAAAAAAAAAD//wYAAAAAAAAAAAD//wUAAAAAAAAAAAD//wQAAAAAAAAAAAD//wMAAAAAAAAAAAD//wIAAAAAAAAAAAD//wEAAAAAAAAAAAD//wAAAAAAAAAAAAD/////AAAAAAAAAAD///7/AAAAAAAAAAD///3/AAAAAAAAAAD///z/AAAAAAAAAAD///v/AAAAAAAAAAD///r/AAAAAAAAAAD///n/AAAAAAAAAAD///j/AAAAAAAAAAD//w8AAAAAAAAAAAD//xAAAAAAAAAAAAD///f/AAAAAAAAAAD///b/AAAAAAAAAAADAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAGAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAQAA0AAAAAAAAAAAASAAsAAAAAAAAAAAATAAsAAAAAAAAAAAAUAAsAAAAAAAAAAAAVAAsAAAAAAAAAAAAWAAsAAAAAAAAAAAAXAAsAAAAAAAAAAAAYAAsAAAAAAAAAAAAZAAsAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_aq0co")
+tile_map_data = PackedByteArray("AAACAA0AAAAAAAAAAAD//w4AAgAAAAAAAAD//w0AAgAAAAAAAAD//wwAAgAAAAAAAAD//wsAAgAAAAAAAAD//woAAgAAAAAAAAD//wkAAgAAAAAAAAD//wgAAgAAAAAAAAD//wcAAgAAAAAAAAD//wYAAgAAAAAAAAD//wUAAgAAAAAAAAD//wQAAgAAAAAAAAD//wMAAgAAAAAAAAD//wIAAgAAAAAAAAD//wEAAgAAAAAAAAD//wAAAgAAAAAAAAD/////AgAAAAAAAAD///7/AgAAAAAAAAD///3/AgAAAAAAAAD///z/AgAAAAAAAAD///v/AgAAAAAAAAD///r/AgAAAAAAAAD///n/AgAAAAAAAAD///j/AgAAAAAAAAD//w8AAgAAAAAAAAD//xAAAgAAAAAAAAD///f/AgAAAAAAAAD///b/AgAAAAAAAAADAA0AAAABAAAAAAAEAA0AAAABAAAAAAAFAA0AAAABAAAAAAAGAA0AAAABAAAAAAAHAA0AAAABAAAAAAAIAA0AAAABAAAAAAAJAA0AAAABAAAAAAAKAA0AAAABAAAAAAALAA0AAAABAAAAAAAMAA0AAAABAAAAAAANAA0AAAABAAAAAAAOAA0AAAABAAAAAAAPAA0AAAABAAAAAAASAAsAAgAAAAAAAAATAAsAAgAAAAAAAAAUAAsAAgAAAAAAAAAVAAsAAgAAAAAAAAAWAAsAAgAAAAAAAAAXAAsAAgAAAAAAAAAYAAsAAgAAAAAAAAAZAAsAAgAAAAAAAAAQAA8AAAACAAIAAAAQAA4AAAACAAEAAAAPAA8AAAABAAIAAAAPAA4AAAABAAEAAAAOAA8AAAABAAIAAAAOAA4AAAABAAEAAAANAA8AAAABAAIAAAANAA4AAAABAAEAAAAMAA8AAAABAAIAAAAMAA4AAAABAAEAAAALAA8AAAABAAIAAAALAA4AAAABAAEAAAAKAA8AAAABAAIAAAAKAA4AAAABAAEAAAAJAA8AAAABAAIAAAAJAA4AAAABAAEAAAAIAA8AAAABAAIAAAAIAA4AAAABAAEAAAAHAA8AAAABAAIAAAAHAA4AAAABAAEAAAAGAA8AAAABAAIAAAAGAA4AAAABAAEAAAAFAA8AAAABAAIAAAAFAA4AAAABAAEAAAAEAA8AAAABAAIAAAAEAA4AAAABAAEAAAADAA8AAAABAAIAAAADAA4AAAABAAEAAAACAA8AAAAAAAIAAAACAA4AAAAAAAEAAAAQAA0AAAACAAAAAAA+AA8AAAABAAIAAAA+AA4AAAABAAEAAAA+AA0AAAABAAAAAAA9AA8AAAABAAIAAAA9AA4AAAABAAEAAAA9AA0AAAABAAAAAAA8AA8AAAABAAIAAAA8AA4AAAABAAEAAAA8AA0AAAABAAAAAAA7AA8AAAABAAIAAAA7AA4AAAABAAEAAAA7AA0AAAABAAAAAAA6AA8AAAABAAIAAAA6AA4AAAABAAEAAAA6AA0AAAABAAAAAAA5AA8AAAABAAIAAAA5AA4AAAABAAEAAAA5AA0AAAABAAAAAAA4AA8AAAABAAIAAAA4AA4AAAABAAEAAAA4AA0AAAABAAAAAAA3AA8AAAABAAIAAAA3AA4AAAABAAEAAAA3AA0AAAABAAAAAAA2AA8AAAABAAIAAAA2AA4AAAABAAEAAAA2AA0AAAABAAAAAAA1AA8AAAABAAIAAAA1AA4AAAABAAEAAAA1AA0AAAABAAAAAAA0AA8AAAABAAIAAAA0AA4AAAABAAEAAAA0AA0AAAABAAAAAAAzAA8AAAABAAIAAAAzAA4AAAABAAEAAAAzAA0AAAABAAAAAAAyAA8AAAABAAIAAAAyAA4AAAABAAEAAAAyAA0AAAABAAAAAAAxAA8AAAABAAIAAAAxAA4AAAABAAEAAAAxAA0AAAABAAAAAAAwAA8AAAABAAIAAAAwAA4AAAABAAEAAAAwAA0AAAABAAAAAAAvAA8AAAABAAIAAAAvAA4AAAABAAEAAAAvAA0AAAABAAAAAAAuAA8AAAABAAIAAAAuAA4AAAABAAEAAAAuAA0AAAABAAAAAAAtAA8AAAABAAIAAAAtAA4AAAABAAEAAAAtAA0AAAABAAAAAAAsAA8AAAABAAIAAAAsAA4AAAABAAEAAAAsAA0AAAABAAAAAAArAA8AAAABAAIAAAArAA4AAAABAAEAAAArAA0AAAABAAAAAAAqAA8AAAABAAIAAAAqAA4AAAABAAEAAAAqAA0AAAABAAAAAAApAA8AAAABAAIAAAApAA4AAAABAAEAAAApAA0AAAABAAAAAAAoAA8AAAABAAIAAAAoAA4AAAABAAEAAAAoAA0AAAABAAAAAAAnAA8AAAABAAIAAAAnAA4AAAABAAEAAAAnAA0AAAABAAAAAAAmAA8AAAABAAIAAAAmAA4AAAABAAEAAAAmAA0AAAABAAAAAAAlAA8AAAABAAIAAAAlAA4AAAABAAEAAAAlAA0AAAABAAAAAAAkAA8AAAAAAAIAAAAkAA4AAAAAAAEAAAAkAA0AAAAAAAAAAAA/AA8AAAABAAIAAAA/AA4AAAABAAEAAAA/AA0AAAABAAAAAABAAA8AAAACAAIAAABAAA4AAAACAAEAAABAAA0AAAACAAAAAABAAAwAAgAAAAAAAABAAAsAAgAAAAAAAABAAAoAAgAAAAAAAABAAAkAAgAAAAAAAABAAAgAAgAAAAAAAABAAAcAAgAAAAAAAABAAAYAAgAAAAAAAABAAAUAAgAAAAAAAABAAAQAAgAAAAAAAABAAAMAAgAAAAAAAABAAAIAAgAAAAAAAABAAAEAAgAAAAAAAABAAAAAAgAAAAAAAABAAP//AgAAAAAAAABAAP7/AgAAAAAAAABAAP3/AgAAAAAAAABAAPz/AgAAAAAAAABAAPv/AgAAAAAAAABAAPr/AgAAAAAAAABAAPn/AgAAAAAAAAADAAQAAwAAAAAAAgAMAAIAAwAAAAAAAgAeAAsAAgAAAAAAAAAfAAsAAgAAAAAAAAAgAAsAAgAAAAAAAAA=")
+tile_set = ExtResource("9_s7dgs")
 
 [node name="HUD" parent="." unique_id=1440423564 instance=ExtResource("11_78wva")]
 
@@ -115,8 +106,6 @@ theme_override_fonts/font = ExtResource("9_5ai5j")
 text = "WORLD
 1-1"
 horizontal_alignment = 1
-
-[node name="Objects" type="Node2D" parent="." unique_id=1802728807]
 
 [node name="QuestionBlock" parent="." unique_id=1292802214 instance=ExtResource("12_smf7x")]
 position = Vector2(240, 272)
@@ -139,6 +128,18 @@ offset_bottom = 253.0
 text = "hit me to get
 an achievement!"
 
+[node name="LabelMisterEarl4" parent="." unique_id=914191916 instance=ExtResource("15_smf7x")]
+z_index = -1
+offset_left = 320.0
+offset_top = 96.0
+offset_right = 594.0
+offset_bottom = 176.0
+text = "these question blocks use godot's signals
+to trigger achievements,
+
+see \"secretunlocker\" node
+to modify them!"
+
 [node name="LabelMisterEarl2" parent="." unique_id=1485092168 instance=ExtResource("15_smf7x")]
 z_index = -1
 offset_left = 640.0
@@ -147,6 +148,30 @@ offset_right = 768.0
 offset_bottom = 173.0
 text = "hit us to progress
 an achievement!"
+
+[node name="LabelMisterEarl3" parent="." unique_id=914636082 instance=ExtResource("15_smf7x")]
+z_index = -1
+offset_left = 1360.0
+offset_top = 48.0
+offset_right = 1548.0
+offset_bottom = 125.0
+text = "Resize this cyan camera area
+to change the level size
+
+you can also add
+multiple camera areas!"
+
+[node name="FinishLine" parent="." unique_id=633176209 instance=ExtResource("16_mssfw")]
+position = Vector2(1440, 416)
+
+[node name="Goomba" parent="." unique_id=1448108736 instance=ExtResource("17_mssfw")]
+position = Vector2(1424, 400)
+
+[node name="Goomba2" parent="." unique_id=1437226097 instance=ExtResource("17_mssfw")]
+position = Vector2(1376, 400)
+
+[node name="Springboard" parent="." unique_id=2017934026 instance=ExtResource("18_1rpsu")]
+position = Vector2(1008, 336)
 
 [connection signal="bumped" from="QuestionBlock" to="SecretUnlocker" method="unlock_secret" binds= [0]]
 [connection signal="bumped" from="QuestionBlock2" to="SecretUnlocker" method="progress_secret" binds= [1]]
