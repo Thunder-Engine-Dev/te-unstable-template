@@ -884,15 +884,13 @@ tweak_name = "f3_keybind"
 tweak_title_text = "f3 keybind to save game room"
 tweak_description_text = "enables a quick shortcut to save room using the f3 key.
 
-notice: if you are in options and have not selected \"exit\" (or the escape key) to go back, pressing f3 will not save the options you've changed! it will also not reset the scene if you're already in the save room."
+notice: if you are in options and have not selected \"exit\" (or the menu back key) to go back, pressing f3 will not save the options you've changed!"
 
 [node name="RowF4" parent="Presets" unique_id=233613770 instance=ExtResource("15_mxo6u")]
 layout_mode = 2
 tweak_name = "f4_keybind"
 tweak_title_text = "f4 keybind to main menu"
-tweak_description_text = "enables a quick shortcut to main menu using the f4 key.
-
-notice: you cannot reset the scene if you are already in the main menu."
+tweak_description_text = "enables a quick shortcut to main menu using the f4 key."
 
 [node name="RowRevShop" parent="Presets" unique_id=1714830565 instance=ExtResource("15_mxo6u")]
 layout_mode = 2

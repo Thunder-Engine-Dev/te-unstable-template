@@ -105,6 +105,7 @@ grow_vertical = 0
 focused = false
 
 [node name="Selector" type="Node2D" parent="Menu" unique_id=1483418858]
+physics_interpolation_mode = 2
 script = ExtResource("4_frmaf")
 smooth_speed = 0.4
 position_padding = 20

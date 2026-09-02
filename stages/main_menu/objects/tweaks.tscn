@@ -104,31 +104,46 @@ server!"
 vertical_alignment = 2
 uppercase = true
 
-[node name="Label2" type="Label" parent="." unique_id=733412537]
+[node name="Label2" type="RichTextLabel" parent="." unique_id=733412537]
+clip_contents = false
 layout_mode = 0
 offset_left = 11.0
 offset_top = 319.0
 offset_right = 130.0
 offset_bottom = 464.0
-theme_override_colors/font_color = Color(0.79, 1, 0.944, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+focus_mode = 0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.79, 1, 0.944, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0.329412, 1)
-theme_override_constants/line_spacing = 1
-theme_override_constants/paragraph_spacing = 0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.435294)
+theme_override_constants/line_separation = 3
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("7_c3x1t")
-theme_override_font_sizes/font_size = 21
+theme_override_fonts/normal_font = ExtResource("7_c3x1t")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
 text = "please press
-%s
+{ui_select}
 or rmb
 for a tweak
 description!"
+scroll_active = false
+shortcut_keys_enabled = false
 vertical_alignment = 2
-autowrap_mode = 3
-uppercase = true
 script = ExtResource("7_lpv5f")
+text_keyboard = "please press
+{ui_select}
+or rmb
+for a tweak
+description!"
+text_joypad = "please press
+{ui_select}
+for a tweak
+description!"
+keyboard_as_button = true
+uppercase = true
+metadata/_custom_type_script = "uid://b3j5nkqkpkikr"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1174388109]
 layer = 4
@@ -185,9 +200,10 @@ vertical_alignment = 1
 autowrap_mode = 3
 uppercase = true
 
-[node name="Text2" type="Label" parent="CanvasLayer/Box/Texture" unique_id=1461891511]
+[node name="Text2" type="RichTextLabel" parent="CanvasLayer/Box/Texture" unique_id=1461891511]
 process_mode = 2
 physics_interpolation_mode = 0
+clip_contents = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -199,19 +215,26 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(0, 27)
 size_flags_horizontal = 4
-theme_override_colors/font_shadow_color = Color(0, 0, 0.188235, 1)
+focus_mode = 0
+mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0.439216, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0.188235, 1)
 theme_override_constants/shadow_offset_x = 3
 theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 6
-theme_override_fonts/font = ExtResource("11_c3x1t")
-theme_override_font_sizes/font_size = 24
-text = "PRESS %s"
+theme_override_fonts/normal_font = ExtResource("11_c3x1t")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "PRESS {ui_select}"
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 3
-uppercase = true
 script = ExtResource("7_lpv5f")
+keyboard_as_button = true
+uppercase = true
+metadata/_custom_type_script = "uid://b3j5nkqkpkikr"
 
 [node name="Text3" type="Label" parent="CanvasLayer/Box/Texture" unique_id=1631416838]
 physics_interpolation_mode = 0

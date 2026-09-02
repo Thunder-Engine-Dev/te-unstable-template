@@ -19,6 +19,12 @@ var is_blocked: bool
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
+	_update_toggle_visual()
+	SettingsManager.tweaks_updated.connect(_update_toggle_visual)
+
+func _update_toggle_visual() -> void:
+	if Engine.is_editor_hint():
+		return
 	var tweak = SettingsManager.get_tweak(tweak_name, default_value)
 	toggle.texture.region.position.y = 0 if tweak else 16
 
