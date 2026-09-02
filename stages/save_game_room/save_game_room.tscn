@@ -350,7 +350,6 @@ warp_to_scene = "res://stages/world_1/map_1.tscn"
 use_circle_transition = true
 circle_closing_speed = 0.05
 circle_center_after_middle = true
-circle_wait_till_scene_changed = false
 
 [node name="Label" type="Label" parent="PipeSave" unique_id=283878778]
 offset_left = -64.0
@@ -376,7 +375,6 @@ warp_to_scene = "res://stages/world_1/map_1.tscn"
 use_circle_transition = true
 circle_closing_speed = 0.05
 circle_center_after_middle = true
-circle_wait_till_scene_changed = false
 
 [node name="Label" type="Label" parent="PipeSave2" unique_id=1065389092]
 offset_left = -64.0
@@ -402,7 +400,6 @@ warp_to_scene = "res://stages/world_1/map_1.tscn"
 use_circle_transition = true
 circle_closing_speed = 0.05
 circle_center_after_middle = true
-circle_wait_till_scene_changed = false
 
 [node name="Label" type="Label" parent="PipeSave3" unique_id=1916444481]
 offset_left = -64.0
@@ -484,21 +481,26 @@ amplitude = Vector2(0, 15)
 phase = 180.0
 frequency = 2.0
 
-[node name="Label" type="Label" parent="ItemShop/Node2D2" unique_id=1272154932]
+[node name="Label" type="RichTextLabel" parent="ItemShop/Node2D2" unique_id=1272154932]
+clip_contents = false
 offset_left = 802.0
 offset_top = 160.0
 offset_right = 1245.0
 offset_bottom = 208.0
+focus_mode = 0
+mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0.368627, 1)
 theme_override_constants/outline_size = 8
-theme_override_fonts/font = ExtResource("19_w2arp")
-theme_override_font_sizes/font_size = 21
+theme_override_fonts/normal_font = ExtResource("19_w2arp")
+theme_override_font_sizes/normal_font_size = 21
+bbcode_enabled = true
 text = "YOU CAN EXCHANGE SOME LIVES FOR ONE OF THESE ITEMS!!!
 BUT BE CAREFUL, SOMETIMES LIVES ARE MORE IMPORTANT THAN THIS STUFF."
+scroll_active = false
+shortcut_keys_enabled = false
 horizontal_alignment = 1
-uppercase = true
 script = ExtResource("28_4shse")
-action = "m_up"
+uppercase = true
 
 [node name="Label" type="Label" parent="ItemShop" unique_id=1798551779]
 offset_left = 752.0
