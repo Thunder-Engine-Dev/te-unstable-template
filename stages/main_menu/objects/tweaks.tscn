@@ -132,6 +132,7 @@ script = ExtResource("7_lpv5f")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1174388109]
 layer = 4
+visible = false
 script = ExtResource("12_cheln")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1149938279]
