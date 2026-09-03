@@ -17,8 +17,6 @@ var _has_cheated: bool = false
 @onready var marker_2d: Marker2D = $Marker2D
 
 var tween_disappear: Tween
-var _overlay_layer: CanvasLayer
-var _overlay_holder: Control
 
 signal secret_set(_name: String)
 
@@ -36,7 +34,7 @@ func _init() -> void:
 
 func _ready() -> void:
 	load_secrets()
-	_setup_window_overlay()
+	_move_toasts_to_overlay()
 	reparent.call_deferred(GlobalViewport.vp, false)
 	
 	# This is an example achievement ported from MFCE; uncomment for it to work!
@@ -47,34 +45,12 @@ func _ready() -> void:
 	#)
 
 
-func _setup_window_overlay() -> void:
-	# Circle wipes live on the window overlay (high-res). Keep toasts in that
-	# same viewport so they draw above the wipe without pixelating it.
-	_overlay_layer = CanvasLayer.new()
-	_overlay_layer.name = &"SecretsOverlay"
-	_overlay_layer.layer = 128
-	_overlay_layer.process_mode = Node.PROCESS_MODE_ALWAYS
-	GlobalViewport.add_child(_overlay_layer)
-	
-	_overlay_holder = Control.new()
-	_overlay_holder.name = &"OverlayRoot"
-	_overlay_holder.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_overlay_layer.add_child(_overlay_holder)
-	for node in [label, marker_2d]:
-		node.reparent(_overlay_holder, false)
-	
-	Thunder._connect(GlobalViewport.view_updated, _sync_window_overlay)
-	_sync_window_overlay()
-
-
-func _sync_window_overlay() -> void:
-	if !is_instance_valid(_overlay_layer) || !is_instance_valid(_overlay_holder):
+func _move_toasts_to_overlay() -> void:
+	var overlay := GlobalViewport.overlay_vp
+	if !overlay:
 		return
-	var container := GlobalViewport.container
-	_overlay_layer.offset = container.position
-	_overlay_layer.scale = container.scale
-	_overlay_holder.size = Vector2(GlobalViewport.vp.size)
-	_overlay_holder.texture_filter = container.texture_filter
+	for node in [label, marker_2d]:
+		node.reparent(overlay, false)
 
 
 func _physics_process(delta: float) -> void:
